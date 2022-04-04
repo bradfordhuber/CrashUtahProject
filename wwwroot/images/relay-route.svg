@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="669.08" height="290.525" viewBox="0 0 669.08 290.525">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="588.48" height="17.997" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_48" data-name="Group 48" transform="translate(-252.28 -287.837)">
+    <g id="days" transform="translate(310.128 560.365)" clip-path="url(#clip-path)">
+      <g id="days-2" data-name="days" transform="translate(-335 -567)">
+        <text id="Mon" transform="translate(345 578)" fill="#43425d" font-size="11" font-family="SourceSansPro-Regular, Source Sans Pro"><tspan x="-9.988" y="0">Mon</tspan></text>
+      </g>
+      <g id="days-3" data-name="days" transform="translate(-244 -567)">
+        <text id="Tue" transform="translate(345 578)" fill="#43425d" font-size="11" font-family="SourceSansPro-Regular, Source Sans Pro"><tspan x="-8.415" y="0">Tue</tspan></text>
+      </g>
+      <g id="days-4" data-name="days" transform="translate(-153 -567)">
+        <text id="Wed" transform="translate(345 578)" fill="#43425d" font-size="11" font-family="SourceSansPro-Regular, Source Sans Pro"><tspan x="-10.104" y="0">Wed</tspan></text>
+      </g>
+      <g id="days-5" data-name="days" transform="translate(-62 -567)">
+        <text id="Thu" transform="translate(345 578)" fill="#43425d" font-size="11" font-family="SourceSansPro-Regular, Source Sans Pro"><tspan x="-8.932" y="0">Thu</tspan></text>
+      </g>
+      <g id="days-6" data-name="days" transform="translate(29 -567)">
+        <text id="Fri" transform="translate(345 578)" fill="#43425d" font-size="11" font-family="SourceSansPro-Regular, Source Sans Pro"><tspan x="-5.869" y="0">Fri</tspan></text>
+      </g>
+      <g id="days-7" data-name="days" transform="translate(120 -567)">
+        <text id="Sat" transform="translate(345 578)" fill="#43425d" font-size="11" font-family="SourceSansPro-Regular, Source Sans Pro"><tspan x="-7.491" y="0">Sat</tspan></text>
+      </g>
+      <g id="days-8" data-name="days" transform="translate(211 -567)">
+        <text id="Sun" transform="translate(345 578)" fill="#43425d" font-size="11" font-family="SourceSansPro-Regular, Source Sans Pro"><tspan x="-8.938" y="0">Sun</tspan></text>
+      </g>
+    </g>
+    <g id="line" transform="translate(18.28 33.837)">
+      <path id="Path_385" data-name="Path 385" d="M0,0H627.6V1.37H0Z" transform="translate(272 261)" fill="#eaf0f4"/>
+      <text id="_1_000" data-name="1,000" transform="translate(259 265)" fill="#43425d" font-size="11" font-family="SourceSansPro-Regular, Source Sans Pro"><tspan x="-24.607" y="0">1,000</tspan></text>
+    </g>
+    <g id="line-2" data-name="line" transform="translate(18.28 83.837)">
+      <path id="Path_385-2" data-name="Path 385" d="M0,0H631.08V1.378H0Z" transform="translate(272 261)" fill="#eaf0f4"/>
+      <text id="_800" data-name="800" transform="translate(259 265)" fill="#43425d" font-size="11" font-family="SourceSansPro-Regular, Source Sans Pro"><tspan x="-16.401" y="0">800</tspan></text>
+    </g>
+    <g id="line-3" data-name="line" transform="translate(18.28 133.837)">
+      <path id="Path_385-3" data-name="Path 385" d="M0,0H628.874V1.373H0Z" transform="translate(272 261)" fill="#eaf0f4"/>
+      <text id="_600" data-name="600" transform="translate(259 265)" fill="#43425d" font-size="11" font-family="SourceSansPro-Regular, Source Sans Pro"><tspan x="-16.401" y="0">600</tspan></text>
+    </g>
+    <g id="line-4" data-name="line" transform="translate(18.28 183.837)">
+      <path id="Path_385-4" data-name="Path 385" d="M0,1.375H629.743V0H0Z" transform="translate(272 259.625)" fill="#eaf0f4"/>
+      <text id="_400" data-name="400" transform="translate(259 265)" fill="#43425d" font-size="11" font-family="SourceSansPro-Regular, Source Sans Pro"><tspan x="-16.401" y="0">400</tspan></text>
+    </g>
+    <g id="line-5" data-name="line" transform="translate(18.28 233.837)">
+      <path id="Path_385-5" data-name="Path 385" d="M0,1.378H630.952V0H0Z" transform="translate(272 259.622)" fill="#eaf0f4"/>
+      <text id="_200" data-name="200" transform="translate(259 265)" fill="#43425d" font-size="11" font-family="SourceSansPro-Regular, Source Sans Pro"><tspan x="-16.401" y="0">200</tspan></text>
+    </g>
+    <g id="line-6" data-name="line" transform="translate(18.28 283.837)">
+      <path id="Path_385-6" data-name="Path 385" d="M0,1.371H628.075V0H0Z" transform="translate(272 259.629)" fill="#eaf0f4"/>
+      <text id="_0" data-name="0" transform="translate(259 265)" fill="#43425d" font-size="11" font-family="SourceSansPro-Regular, Source Sans Pro"><tspan x="-5.467" y="0">0</tspan></text>
+    </g>
+    <g id="Chart.Content" transform="translate(301.129 375.138)">
+      <g id="bar" transform="translate(0 43.775)">
+        <path id="bar-2" data-name="bar" d="M4,0H38.437a4,4,0,0,1,4,4V128.6a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V4A4,4,0,0,1,4,0Z" transform="translate(0 0)" fill="#a3a1fb"/>
+        <rect id="bar-3" data-name="bar" width="42.437" height="19.813" transform="translate(0 108.785)" fill="#ffda83"/>
+        <rect id="bar-4" data-name="bar" width="42.437" height="37.31" transform="translate(0 71.475)" fill="#ff8373"/>
+        <rect id="bar-5" data-name="bar" width="42.437" height="24.454" transform="translate(0 47.05)" fill="#56d9fe"/>
+      </g>
+      <g id="bar-6" data-name="bar" transform="translate(455.071 43.775)">
+        <path id="bar-7" data-name="bar" d="M4,0H38.437a4,4,0,0,1,4,4V128.6a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V4A4,4,0,0,1,4,0Z" transform="translate(0 0)" fill="#a3a1fb"/>
+        <rect id="bar-8" data-name="bar" width="42.437" height="19.813" transform="translate(0 108.785)" fill="#ffda83"/>
+        <rect id="bar-9" data-name="bar" width="42.437" height="37.31" transform="translate(0 71.475)" fill="#ff8373"/>
+        <rect id="bar-10" data-name="bar" width="42.437" height="24.454" transform="translate(0 47.05)" fill="#56d9fe"/>
+      </g>
+      <g id="bar-11" data-name="bar" transform="translate(91.271)">
+        <path id="bar-12" data-name="bar" d="M4,0H38.437a4,4,0,0,1,4,4V172.373a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V4A4,4,0,0,1,4,0Z" transform="translate(0 0)" fill="#a3a1fb"/>
+        <rect id="bar-13" data-name="bar" width="42.437" height="39.412" transform="translate(0 132.96)" fill="#ffda83"/>
+        <rect id="bar-14" data-name="bar" width="42.437" height="66.721" transform="translate(0 66.239)" fill="#ff8373"/>
+        <rect id="bar-15" data-name="bar" width="42.437" height="31.493" transform="translate(0 34.785)" fill="#56d9fe"/>
+      </g>
+      <g id="bar-16" data-name="bar" transform="translate(182.543 66.439)">
+        <path id="bar-17" data-name="bar" d="M4,0H38.437a4,4,0,0,1,4,4V105.934a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V4A4,4,0,0,1,4,0Z" transform="translate(0 0)" fill="#a3a1fb"/>
+        <rect id="bar-18" data-name="bar" width="42.437" height="10.081" transform="translate(0 95.853)" fill="#ffda83"/>
+        <rect id="bar-19" data-name="bar" width="42.437" height="24.293" transform="translate(0 71.56)" fill="#ff8373"/>
+        <rect id="bar-20" data-name="bar" width="42.437" height="19.355" transform="translate(0 52.23)" fill="#56d9fe"/>
+      </g>
+      <g id="bar-21" data-name="bar" transform="translate(273.814 66.439)">
+        <path id="bar-22" data-name="bar" d="M4,0H38.437a4,4,0,0,1,4,4V105.934a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V4A4,4,0,0,1,4,0Z" transform="translate(0 0)" fill="#a3a1fb"/>
+        <rect id="bar-23" data-name="bar" width="42.437" height="10.081" transform="translate(0 95.853)" fill="#ffda83"/>
+        <rect id="bar-24" data-name="bar" width="42.437" height="24.293" transform="translate(0 71.56)" fill="#ff8373"/>
+        <rect id="bar-25" data-name="bar" width="42.437" height="19.355" transform="translate(0 52.23)" fill="#56d9fe"/>
+      </g>
+      <g id="bar-26" data-name="bar" transform="translate(363.8 104.239)">
+        <path id="bar-27" data-name="bar" d="M4,0H38.437a4,4,0,0,1,4,4V68.133a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V4A4,4,0,0,1,4,0Z" fill="#a3a1fb"/>
+        <rect id="bar-28" data-name="bar" width="42.437" height="8.296" transform="translate(0 59.838)" fill="#ffda83"/>
+        <rect id="bar-29" data-name="bar" width="42.437" height="19.991" transform="translate(0 39.847)" fill="#ff8373"/>
+        <rect id="bar-30" data-name="bar" width="42.437" height="15.927" transform="translate(0 23.939)" fill="#56d9fe"/>
+      </g>
+      <g id="bar-31" data-name="bar" transform="translate(546.342 122.986)">
+        <path id="bar-32" data-name="bar" d="M4,0H38.437a4,4,0,0,1,4,4V49.387a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V4A4,4,0,0,1,4,0Z" fill="#a3a1fb"/>
+        <rect id="bar-33" data-name="bar" width="42.437" height="6.013" transform="translate(0 43.373)" fill="#ffda83"/>
+        <rect id="bar-34" data-name="bar" width="42.437" height="14.491" transform="translate(0 28.883)" fill="#ff8373"/>
+        <rect id="bar-35" data-name="bar" width="42.437" height="11.545" transform="translate(0 17.353)" fill="#56d9fe"/>
+      </g>
+    </g>
+  </g>
+</svg>
