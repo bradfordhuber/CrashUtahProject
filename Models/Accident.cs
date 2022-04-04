@@ -6,9 +6,10 @@ namespace CrashUtahProject.Models
     {
         [Required]
         [Key]
-        public string crash_id { get; set; }
+        public double crash_id { get; set; }
+        public string crash_datetime { get; set; }
         public string city { get; set; }
         public string county_name { get; set; }
-        public string crash_severity_id { get; set; }
+        public double crash_severity_id { get; set; }
     }
 }

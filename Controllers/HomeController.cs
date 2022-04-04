@@ -12,14 +12,30 @@ namespace CrashUtahProject.Controllers
     public class HomeController : Controller
     {
 
+        private IAccidentRepository repo { get; set; }
+
+        public HomeController(IAccidentRepository temp)
+        {
+            repo = temp;
+        }
+
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Dashboard()
         {
             return View();
         }
 
         public IActionResult Data()
         {
-            return View();
+            ViewBag.Accidents = repo.Accidents.GroupBy(b => b.county_name).ToList();
+            var x = repo.Accidents
+                .ToList();
+
+            return View(x);
         }
     }
 }
