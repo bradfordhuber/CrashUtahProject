@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CrashUtahProject.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace CrashUtahProject
 {
@@ -31,6 +32,15 @@ namespace CrashUtahProject
                 options.UseMySql(Configuration.GetConnectionString("AccidentDbConnection"));
             });
             services.AddScoped<IAccidentRepository, EFAccidentRepository>();
+
+            services.AddDbContext<AppIdentityDbContext>(options =>
+            {
+                options.UseSqlite(Configuration["ConnectionStrings:IdentityConnection"]);
+
+            });
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                    .AddEntityFrameworkStores<AppIdentityDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,6 +61,9 @@ namespace CrashUtahProject
 
             app.UseRouting();
 
+            app.UseAuthentication();
+            app.UseAuthorization();
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -59,6 +72,8 @@ namespace CrashUtahProject
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            IdentitySeedData.EnsurePopulated(app);
         }
     }
 }

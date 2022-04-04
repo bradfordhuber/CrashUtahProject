@@ -31,7 +31,7 @@ namespace CrashUtahProject.Controllers
 
         public IActionResult Data()
         {
-            ViewBag.Accidents = repo.Accidents.GroupBy(b => b.county_name).ToList();
+            //ViewBag.Accidents = repo.Accidents.GroupBy(b => b.county_name).ToList();
             var x = repo.Accidents
                 .ToList();
 
