@@ -21,5 +21,10 @@ namespace CrashUtahProject.Controllers
         {
             return View();
         }
+
+        public IActionResult Crash()
+        {
+            return View();
+        }
     }
 }
