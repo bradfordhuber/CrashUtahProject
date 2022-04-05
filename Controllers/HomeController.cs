@@ -12,19 +12,29 @@ namespace CrashUtahProject.Controllers
     public class HomeController : Controller
     {
 
+        private IAccidentRepository repo { get; set; }
+
+        public HomeController(IAccidentRepository temp)
+        {
+            repo = temp;
+        }
+
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Dashboard()
         {
             return View();
         }
 
         public IActionResult Data()
         {
-            return View();
-        }
+            var x = repo.Accidents
+                .ToList();
 
-        public IActionResult Crash()
-        {
-            return View();
+            return View(x);
         }
     }
 }
