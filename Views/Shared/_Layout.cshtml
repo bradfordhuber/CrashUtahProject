@@ -93,6 +93,9 @@
             var n = c.documentElement,
                 t = " w-mod-";
             n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
+        }(window, document);
+    </script>
+    <link href="images/steering-wheel.png" rel="shortcut icon" type="image/x-icon">
         }(window, document);</script>
     <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <link href="images/webclip.png" rel="apple-touch-icon">
@@ -139,6 +142,7 @@
 <body>
 
     <div class="container">
+        <partial name="_CookieConsentPartial" />
         <main role="main" class="">
             @RenderBody()
         </main>
