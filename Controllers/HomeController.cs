@@ -29,10 +29,32 @@ namespace CrashUtahProject.Controllers
             return View();
         }
 
-        public IActionResult Data()
+        public IActionResult Data(string search)
+        {
+
+            if (search == null)
+            {
+                var x = repo.Accidents
+                    .ToList();
+
+                return View(x);
+            }
+            else
+            {
+                var x = repo.Accidents
+                    .Where(x => x.crash_id.ToString().StartsWith(search))
+                    .ToList();
+
+                return View(x);
+            }
+
+            
+        }
+
+        public IActionResult Crash(double id)
         {
             var x = repo.Accidents
-                .ToList();
+                .FirstOrDefault(x => x.crash_id == id);
 
             return View(x);
         }

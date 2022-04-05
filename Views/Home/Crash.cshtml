@@ -2,7 +2,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 
-
+@model Accident
 
     <div class="flex-body">
         <div data-w-id="cdda94d3-bef3-46c5-adcf-584ef9b6376f" class="nav-container">
@@ -70,119 +70,119 @@
             <div class="crash-data-page-table card-shadow">
                 <div class="crash-line-item">
                     <div class="text-bold">Crash ID:</div>
-                    <div>17</div>
+                    <div>@Model.crash_id</div>
                 </div>
                 <div class="crash-line-item">
                     <div class="text-bold">Crash Date:</div>
-                    <div>4/4/2022</div>
-                </div>
-                <div class="crash-line-item">
-                    <div class="text-bold">Route:</div>
-                    <div>2258</div>
-                </div>
-                <div class="crash-line-item">
-                    <div class="text-bold">Milepoint:</div>
-                    <div>4.56</div>
+                    <div>@Model.crash_datetime</div>
                 </div>
                 <div class="crash-line-item">
                     <div class="text-bold">Latitude:</div>
-                    <div>4,095,217.615</div>
+                    <div>@Model.lat_utm_y</div>
                 </div>
                 <div class="crash-line-item">
-                    <div class="text-bold">Longitude</div>
-                    <div>449,018.7757</div>
+                    <div class="text-bold">Milepoint:</div>
+                    <div>@Model.milepoint</div>
+                </div>
+                <div class="crash-line-item">
+                    <div class="text-bold">Longitude::</div>
+                    <div>@Model.long_utm_x</div>
+                </div>
+                <div class="crash-line-item">
+                    <div class="text-bold">Route:</div>
+                    <div>@Model.route</div>
                 </div>
                 <div class="crash-line-item">
                     <div class="text-bold">Main Road:</div>
-                    <div>SR-89</div>
+                    <div>@Model.main_road_name</div>
                 </div>
                 <div class="crash-line-item">
                     <div class="text-bold">City:</div>
-                    <div>OUTSIDE CITY LIMITS</div>
+                    <div>@Model.city</div>
                 </div>
                 <div class="crash-line-item">
                     <div class="text-bold">County:</div>
-                    <div>KANE</div>
+                    <div>@Model.county_name</div>
                 </div>
                 <div class="crash-line-item">
                     <div class="text-bold">Crash Severity:</div>
-                    <div>5</div>
+                    <div>@Model.crash_severity_id</div>
                 </div>
                 <div class="crash-line-item">
                     <div class="text-bold">Pedestrian Involved: </div>
-                    <div>True</div>
+                    <div>@Model.pedestrian_involved</div>
                 </div>
                 <div class="crash-line-item">
                     <div class="text-bold">Work Zone Related: </div>
-                    <div>True</div>
+                    <div>@Model.work_zone_related</div>
                 </div>
                 <div class="crash-line-item">
                     <div class="text-bold">Bicyclist Involved: </div>
-                    <div>True</div>
+                    <div>@Model.bicyclist_involved</div>
                 </div>
                 <div class="crash-line-item">
                     <div class="text-bold">Motorcycle Involved: </div>
-                    <div>True</div>
+                    <div>@Model.motorcycle_involved</div>
                 </div>
                 <div class="crash-line-item">
                     <div class="text-bold">Improper Restraint:</div>
-                    <div>True</div>
+                    <div>@Model.improper_restraint</div>
                 </div>
                 <div class="crash-line-item">
                     <div class="text-bold">Unrestrained:</div>
-                    <div>True</div>
+                    <div>@Model.unrestrained</div>
                 </div>
                 <div class="crash-line-item">
                     <div class="text-bold">DUI:</div>
-                    <div>True</div>
+                    <div>@Model.dui</div>
                 </div>
                 <div class="crash-line-item">
                     <div class="text-bold">Intersection Related:</div>
-                    <div>True</div>
+                    <div>@Model.intersection_related</div>
                 </div>
                 <div class="crash-line-item">
                     <div class="text-bold">Wild Animal Related:</div>
-                    <div>True</div>
+                    <div>@Model.wild_animal_related</div>
                 </div>
                 <div class="crash-line-item">
                     <div class="text-bold">Domestic Animal Related:</div>
-                    <div>True</div>
+                    <div>@Model.domestic_animal_related</div>
                 </div>
                 <div class="crash-line-item">
                     <div class="text-bold">Overturn Rollover:</div>
-                    <div>True</div>
+                    <div>@Model.overturn_rollover</div>
                 </div>
                 <div class="crash-line-item">
                     <div class="text-bold">Commercial Moter Vehicle Involved:</div>
-                    <div>True</div>
+                    <div>@Model.commercial_motor_veh_involved</div>
                 </div>
                 <div class="crash-line-item">
                     <div class="text-bold">Teenage Driver Involved:</div>
-                    <div>True</div>
+                    <div>@Model.teenage_driver_involved</div>
                 </div>
                 <div class="crash-line-item">
                     <div class="text-bold">Older Driver Involved:</div>
-                    <div>True</div>
+                    <div>@Model.older_driver_involved</div>
                 </div>
                 <div class="crash-line-item">
                     <div class="text-bold">Night/Dark Condition:</div>
-                    <div>True</div>
+                    <div>@Model.night_dark_condition</div>
                 </div>
                 <div class="crash-line-item">
                     <div class="text-bold">Single Vehicle: </div>
-                    <div>True</div>
+                    <div>@Model.single_vehicle</div>
                 </div>
                 <div class="crash-line-item">
                     <div class="text-bold">Distracted Driving: </div>
-                    <div>True</div>
+                    <div>@Model.distracted_driving</div>
                 </div>
                 <div class="crash-line-item">
                     <div class="text-bold">Drowsy Driving:</div>
-                    <div>True</div>
+                    <div>@Model.drowsy_driving</div>
                 </div>
                 <div class="crash-line-item">
                     <div class="text-bold">Roadway Departure:</div>
-                    <div>True</div>
+                    <div>@Model.roadway_departure</div>
                 </div>
             </div>
         </div>
