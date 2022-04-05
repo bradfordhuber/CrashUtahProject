@@ -77,10 +77,12 @@
 
     <!--Main Page-->
     <div class="main-block">
-
+        <p>Search By:</p>
         @using (Html.BeginForm("Data", "Home", FormMethod.Get))
         {
-            @Html.TextBox("search") <input type="submit" value="Search" />
+            <p>Crash Id:</p> @Html.TextBox("searchByID")
+            <p>City:</p> @Html.TextBox("searchByCity")
+            <br /><input type="submit" value="Search" />
         }
 
         <div class="table-wrapper card-shadow">

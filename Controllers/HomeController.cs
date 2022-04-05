@@ -29,10 +29,10 @@ namespace CrashUtahProject.Controllers
             return View();
         }
 
-        public IActionResult Data(string search)
+        public IActionResult Data(string searchByID, string searchByCity)
         {
 
-            if (search == null)
+            if (searchByID == null && searchByCity == null)
             {
                 var x = repo.Accidents
                     .ToList();
@@ -42,7 +42,7 @@ namespace CrashUtahProject.Controllers
             else
             {
                 var x = repo.Accidents
-                    .Where(x => x.crash_id.ToString().StartsWith(search))
+                    .Where(x => x.crash_id.ToString().Contains(searchByID) && x.city.Contains(searchByCity))
                     .ToList();
 
                 return View(x);
