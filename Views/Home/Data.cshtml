@@ -102,7 +102,7 @@
                                 <div fs-cmsfilter-type="date" fs-cmsfilter-field="date" class="table-data date">@a.county_name</div>
                                 <div fs-cmsfilter-type="date" fs-cmsfilter-field="date" class="table-data date">@a.crash_severity_id</div>
                                 <div class="div-block-421">
-                                    <a href="#" class="button-secondary-icon-copy w-button">More Details<span class="btn-icon"> </span></a>
+                                    <a asp-action="Crash" asp-controller="Home" asp-route-id="@a.crash_id" class="button-secondary-icon-copy w-button"><span class="btn-icon">More Details</span></a>
                                 </div>
                             </div>
                             }

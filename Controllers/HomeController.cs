@@ -36,5 +36,13 @@ namespace CrashUtahProject.Controllers
 
             return View(x);
         }
+
+        public IActionResult Crash(double id)
+        {
+            var x = repo.Accidents
+                .FirstOrDefault(x => x.crash_id == id);
+
+            return View(x);
+        }
     }
 }
