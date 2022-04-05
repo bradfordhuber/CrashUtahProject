@@ -19,6 +19,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.23" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,9 +31,14 @@
     <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
     <None Remove="Models\ViewModels\" />
     <None Remove="Views\Account\" />
+    <None Remove="Pages\" />
+    <None Remove="Pages\Admin\" />
+    <None Remove="Microsoft.VisualStudio.Web.CodeGeneration.Design" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\ViewModels\" />
     <Folder Include="Views\Account\" />
+    <Folder Include="Pages\" />
+    <Folder Include="Pages\Admin\" />
   </ItemGroup>
 </Project>

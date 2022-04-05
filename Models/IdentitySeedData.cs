@@ -10,7 +10,7 @@ namespace CrashUtahProject.Models
     public static class IdentitySeedData
     {
         private const string adminUser = "Admin";
-        private const string adminPassword = "CrashTestDummy";
+        private const string adminPassword = "Admin123!";
 
         public static async void EnsurePopulated(IApplicationBuilder app)
         {
