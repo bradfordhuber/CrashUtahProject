@@ -5,9 +5,7 @@
 @{    
 }
 
-@model List<Accident>
-
-
+@model AccidentsViewModel
 
 <div class="flex-body">
 
@@ -64,12 +62,12 @@
             <div class="nav-item separator"></div>
             <a asp-controller="Home" class="nav-item bottom-item-inner dark-text w-inline-block">
                 @*<div data-w-id="f8490152-5ae2-0a4c-a947-8d25251672e6" class="nav-item-icon user-bg">
-                    <div class="user-icon"><strong class="bold-text">M</strong></div>
-                </div>*@
+                        <div class="user-icon"><strong class="bold-text">M</strong></div>
+                    </div>*@
                 <div ms-data="first-name" data-w-id="f8490152-5ae2-0a4c-a947-8d25251672ea" class="nav-label">Log In</div>
                 @*<div class="menu-dots">
-                    <div data-w-id="f8490152-5ae2-0a4c-a947-8d25251672ed" class="icon nav-foot-icon"></div>
-                </div>*@
+                        <div data-w-id="f8490152-5ae2-0a4c-a947-8d25251672ed" class="icon nav-foot-icon"></div>
+                    </div>*@
             </a>
         </div>
     </div>
@@ -99,7 +97,7 @@
                     <div class="scroll-container">
                         <div class="scroll-table-content">
 
-                            @foreach (var a in Model.Take(50))
+                            @foreach (var a in Model.Accidents)
                             {
                                 <div class="table-row">
                                     <div class="table-box">
@@ -119,5 +117,10 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div page-blah="@Model.PageInfo" page-action="Data"
+         page-class="btn" page-class-normal="btn-outline-dark"
+         page-class-selected="btn-primary" class="btn-group pull-right m-1"
+         page-classes-enabled="true">
     </div>
 </div>
