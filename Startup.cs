@@ -76,6 +76,12 @@ namespace CrashUtahProject
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                    name: "searchpage",
+                    pattern: "{id}/{city}/{pageNum}",
+                    defaults: new { Controller = "Home", Action = "Data" }
+                    );
+
+                endpoints.MapControllerRoute(
                     name: "crashpage",
                     pattern: "{id}",
                     defaults: new { Controller = "Home", action = "Crash" });

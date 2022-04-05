@@ -1,4 +1,5 @@
 ﻿using CrashUtahProject.Models;
+using CrashUtahProject.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -29,23 +30,50 @@ namespace CrashUtahProject.Controllers
             return View();
         }
 
-        public IActionResult Data(string searchByID, string searchByCity)
+        public IActionResult Data(string searchByID, string searchByCity, int pageNum = 1)
         {
+            int pageSize = 25;
 
             if (searchByID == null && searchByCity == null)
             {
-                var x = repo.Accidents
-                    .ToList();
+                var x = new AccidentsViewModel
+                {
+                    Accidents = repo.Accidents
+                    .OrderBy(x => x.crash_id)
+                    .Skip((pageNum - 1) * pageSize)
+                    .Take(pageSize),
+
+                    PageInfo = new PageInfo
+                    {
+                        TotalNumAccidents = repo.Accidents.Count(),
+                        AccidentsPerPage = pageSize,
+                        CurrentPage = pageNum
+                    }
+                };
 
                 return View(x);
             }
             else
             {
-                var x = repo.Accidents
-                    .Where(x => x.crash_id.ToString().Contains(searchByID) && x.city.Contains(searchByCity))
-                    .ToList();
+                searchByID = searchByID ?? "%";
 
-                return View(x);
+                var x = new AccidentsViewModel
+                {
+                    Accidents = repo.Accidents
+                    .Where(x => x.crash_id.ToString().Contains(searchByID) && x.city.Contains(searchByCity))
+                    .OrderBy(x => x.crash_id)
+                    .Skip((pageNum - 1) * pageSize)
+                    .Take(pageSize),
+
+                    PageInfo = new PageInfo
+                    {
+                        TotalNumAccidents = repo.Accidents.Count(),
+                        AccidentsPerPage = pageSize,
+                        CurrentPage = pageNum
+                    }
+                };
+
+            return View(x);
             }
 
             
