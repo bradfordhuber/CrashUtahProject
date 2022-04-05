@@ -77,6 +77,12 @@
 
     <!--Main Page-->
     <div class="main-block">
+
+        @using (Html.BeginForm("Data", "Home", FormMethod.Get))
+        {
+            @Html.TextBox("search") <input type="submit" value="Search" />
+        }
+
         <div class="table-wrapper card-shadow">
             <div class="table-row header">
                 <div class="table-heading">Crash ID</div>
@@ -93,18 +99,18 @@
 
                             @foreach (var a in Model.Take(50))
                             {
-                            <div class="table-row">
-                                <div class="table-box">
-                                    <div fs-cmssort-field="name" class="table-data name">@a.crash_id</div>
+                                <div class="table-row">
+                                    <div class="table-box">
+                                        <div fs-cmssort-field="name" class="table-data name">@a.crash_id</div>
+                                    </div>
+                                    <div class="table-data">Date Here</div>
+                                    <div class="table-data">@a.city</div>
+                                    <div fs-cmsfilter-type="date" fs-cmsfilter-field="date" class="table-data date">@a.county_name</div>
+                                    <div fs-cmsfilter-type="date" fs-cmsfilter-field="date" class="table-data date">@a.crash_severity_id</div>
+                                    <div class="div-block-421">
+                                        <a asp-action="Crash" asp-controller="Home" asp-route-id="@a.crash_id" class="button-secondary-icon-copy w-button"><span class="btn-icon">More Details</span></a>
+                                    </div>
                                 </div>
-                                <div class="table-data">Date Here</div>
-                                <div class="table-data">@a.city</div>
-                                <div fs-cmsfilter-type="date" fs-cmsfilter-field="date" class="table-data date">@a.county_name</div>
-                                <div fs-cmsfilter-type="date" fs-cmsfilter-field="date" class="table-data date">@a.crash_severity_id</div>
-                                <div class="div-block-421">
-                                    <a asp-action="Crash" asp-controller="Home" asp-route-id="@a.crash_id" class="button-secondary-icon-copy w-button"><span class="btn-icon">More Details</span></a>
-                                </div>
-                            </div>
                             }
                         </div>
                     </div>
