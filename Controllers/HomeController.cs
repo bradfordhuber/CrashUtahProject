@@ -57,11 +57,23 @@ namespace CrashUtahProject.Controllers
             {
                 searchByID = searchByID ?? "%";
 
-                var x = repo.Accidents
+                var x = new AccidentsViewModel
+                {
+                    Accidents = repo.Accidents
                     .Where(x => x.crash_id.ToString().Contains(searchByID) && x.city.Contains(searchByCity))
-                    .ToList();
+                    .OrderBy(x => x.crash_id)
+                    .Skip((pageNum - 1) * pageSize)
+                    .Take(pageSize),
 
-                return View(x);
+                    PageInfo = new PageInfo
+                    {
+                        TotalNumAccidents = repo.Accidents.Count(),
+                        AccidentsPerPage = pageSize,
+                        CurrentPage = pageNum
+                    }
+                };
+
+            return View(x);
             }
 
             
