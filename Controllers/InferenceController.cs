@@ -41,14 +41,3 @@ namespace CrashUtahProject.Controllers
         }
     }
 }
-
-
-
-
-//namespace aspnetcore.Controllers
-//{
-//    [ApiController]
-//    [Route("/score")]
-
-
-//}

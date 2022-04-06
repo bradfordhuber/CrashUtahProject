@@ -13,6 +13,7 @@ namespace CrashUtahProject.Models
 
         public void SaveAccident(Accident a)
         {
+            _context.Update(a);
             _context.SaveChanges();
         }
 
