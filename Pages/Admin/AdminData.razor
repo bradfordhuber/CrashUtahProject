@@ -1,0 +1,69 @@
+﻿@page "/admin"
+@inherits OwningComponentBase<IAccidentRepository>
+
+<table class="table table-sm table-bordered table-striped">
+
+    <thead>
+        <tr>
+            <th>Crash ID</th>
+            <th>Datetime</th>
+            <th>Main Road Name</th>
+            <th>City</th>
+            <th>County</th>
+            <th>Severity</th>
+            <th>Route</th>
+            <th>Milepoint</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @if (AccidentData?.Count() > 0)
+        {
+            //List Accidents
+                @foreach (Accident a in AccidentData.Take(50))
+                {
+                    <tr>
+                        <td>@a.crash_id</td>
+                        <td>Date Here</td>
+                        <td>@a.main_road_name</td>
+                        <td>@a.city</td>
+                        <td>@a.county_name</td>
+                        <td>@a.crash_severity_id</td>
+                        <td>@a.route</td>
+                        <td>@a.milepoint</td>
+                        <td><NavLink class="btn btn-warning btn-sm" href="@GetEditUrl(a.crash_id)">Edit</NavLink></td>
+                        <td><button class="btn btn-danger btn-sm" @onclick="@(x => RemoveAccident(a))">Delete</button></td>
+                    </tr>
+                }
+        }
+
+    </tbody>
+
+
+</table>
+
+@code {
+
+    public IAccidentRepository repo => Service;
+
+    public IEnumerable<Accident> AccidentData { get; set; }
+
+    protected async override Task OnInitializedAsync()
+    {
+        await UpdateData();
+    }
+
+    public async Task UpdateData()
+    {
+        AccidentData = await repo.Accidents.ToListAsync();
+    }
+
+    public string GetEditUrl(double id) => $"/admin/edit/{id}";
+
+    public async Task RemoveAccident(Accident a)
+    {
+        repo.DeleteAccident(a);
+        await UpdateData();
+    }
+}
