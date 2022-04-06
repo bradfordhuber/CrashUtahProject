@@ -20,6 +20,7 @@
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.23" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="Microsoft.ML.OnnxRuntime" Version="1.11.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,6 +38,8 @@
     <None Remove="PagedList.Mvc" />
     <None Remove="PagedList" />
     <None Remove="Infrastructure\" />
+    <None Remove="Views\Inference\" />
+    <None Remove="Microsoft.ML.OnnxRuntime" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\ViewModels\" />
@@ -44,5 +47,6 @@
     <Folder Include="Pages\" />
     <Folder Include="Pages\Admin\" />
     <Folder Include="Infrastructure\" />
+    <Folder Include="Views\Inference\" />
   </ItemGroup>
 </Project>

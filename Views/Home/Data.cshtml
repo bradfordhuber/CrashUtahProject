@@ -99,18 +99,22 @@
 
                             @foreach (var a in Model.Accidents)
                             {
-                                <div class="table-row">
-                                    <div class="table-box">
-                                        <div fs-cmssort-field="name" class="table-data name">@a.crash_id</div>
-                                    </div>
-                                    <div class="table-data">Date Here</div>
-                                    <div class="table-data">@a.city</div>
-                                    <div fs-cmsfilter-type="date" fs-cmsfilter-field="date" class="table-data date">@a.county_name</div>
-                                    <div fs-cmsfilter-type="date" fs-cmsfilter-field="date" class="table-data date">@a.crash_severity_id</div>
-                                    <div class="div-block-421">
-                                        <a asp-action="Crash" asp-controller="Home" asp-route-id="@a.crash_id" class="button-secondary-icon-copy w-button"><span class="btn-icon">More Details</span></a>
-                                    </div>
+                            <div class="table-row">
+                                <div class="table-box">
+                                    <div fs-cmssort-field="name" class="table-data name">@a.crash_id</div>
                                 </div>
+                                <div class="table-data">Date Here</div>
+                                <div class="table-data">@a.city</div>
+                                <div fs-cmsfilter-type="date" fs-cmsfilter-field="date" class="table-data date">@a.county_name</div>
+                                <div fs-cmsfilter-type="date" fs-cmsfilter-field="date" class="table-data date">@a.crash_severity_id</div>
+                                <div class="div-block-421">
+                                    <a asp-action="Crash" asp-controller="Home" asp-route-id="@a.crash_id" class="button-secondary-icon-copy w-button"><span class="btn-icon">More Details</span></a>
+                                </div>
+                                @if (this.User.Identity.IsAuthenticated)
+                                {
+                                    <div class="table-data"><a href="/admin/edit/@a.crash_id">Edit</a></div>
+                                }
+                            </div>
                             }
                         </div>
                     </div>
