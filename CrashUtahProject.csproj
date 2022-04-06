@@ -32,8 +32,6 @@
     <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
     <None Remove="Models\ViewModels\" />
     <None Remove="Views\Account\" />
-    <None Remove="Pages\" />
-    <None Remove="Pages\Admin\" />
     <None Remove="Microsoft.VisualStudio.Web.CodeGeneration.Design" />
     <None Remove="PagedList.Mvc" />
     <None Remove="PagedList" />
@@ -44,9 +42,18 @@
   <ItemGroup>
     <Folder Include="Models\ViewModels\" />
     <Folder Include="Views\Account\" />
-    <Folder Include="Pages\" />
-    <Folder Include="Pages\Admin\" />
     <Folder Include="Infrastructure\" />
     <Folder Include="Views\Inference\" />
+    <Folder Include=".ebextensions\" />
+    <Folder Include=".platform\" />
+    <Folder Include=".platform\hooks\" />
+    <Folder Include=".platform\hooks\postdeploy\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".ebextensions\00_install_certbot.config" />
+    <None Include=".ebextensions\01_open_https_port.config" />
+    <None Include=".platform\hooks\postdeploy\00_get_certificate.sh" />
+    <None Include=".ebextensions\02_grant_executable_rights.config" />
+    <None Include=".ebextensions\03_renew_ssl_certificate_cron_job.config" />
   </ItemGroup>
 </Project>
