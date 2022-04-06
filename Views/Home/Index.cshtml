@@ -5,3 +5,10 @@
 }
 
 <a asp-controller="Home" asp-action="Dashboard" class="btn btn-primary">View Data</a>
+
+<a asp-controller="Inference" asp-action="Prediction" class="btn btn-primary">See Inference Calculator</a>
+
+@if (this.User.Identity.IsAuthenticated)
+            {
+                <p>You are logged in</p>
+            }
