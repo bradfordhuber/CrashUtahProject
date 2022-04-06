@@ -1,0 +1,519 @@
+﻿@model Accident
+
+<h1>Edit Page</h1>
+
+@Model.crash_id
+@Model.city
+@Model.county_name
+
+<form method="post">
+    <label asp-for="crash_datetime">Date and Time:</label>
+    <input type="datetime-local" asp-for="crash_datetime" />
+    <br />
+
+    <label asp-for="main_road_name">Main Road Name (If an intersection, enter as "Example Road - Example Ave"):</label>
+    <input asp-for="main_road_name" />
+    <br />
+
+    <label asp-for="city">City:</label>
+    <select asp-for="city">
+        <option value="Alpine">Alpine</option>
+        <option value="Alta">Alta</option>
+        <option value="Altamont">Altamont</option>
+        <option value="Alton">Alton</option>
+        <option value="Amalga">Amalga</option>
+        <option value="American Fork">American Fork</option>
+        <option value="Annabella">Annabella</option>
+        <option value="Antimony">Antimony</option>
+        <option value="Apple Valley">Apple Valley</option>
+        <option value="Aurora">Aurora</option>
+        <option value="Ballard">Ballard</option>
+        <option value="Bear River">Bear River</option>
+        <option value="Beaver City">Beaver City</option>
+        <option value="Beaver County">Beaver County</option>
+        <option value="Bicknell">Bicknell</option>
+        <option value="Big Water">Big Water</option>
+        <option value="Blanding">Blanding</option>
+        <option value="Bluff">Bluff</option>
+        <option value="Bluffdale">Bluffdale</option>
+        <option value="Bluffdale South">Bluffdale South</option>
+        <option value="Boulder">Boulder</option>
+        <option value="Bountiful">Bountiful</option>
+        <option value="Box Elder County">Box Elder County</option>
+        <option value="Brian Head">Brian Head</option>
+        <option value="Brigham City">Brigham City</option>
+        <option value="Brighton">Brighton</option>
+        <option value="Bryce Canyon">Bryce Canyon</option>
+        <option value="Cache County">Cache County</option>
+        <option value="Cache Valley Transit">Cache Valley Transit</option>
+        <option value="Cannonville">Cannonville</option>
+        <option value="Carbon County">Carbon County</option>
+        <option value="Castle Dale">Castle Dale</option>
+        <option value="Castle Valley">Castle Valley</option>
+        <option value="Cedar City">Cedar City</option>
+        <option value="Cedar Fort">Cedar Fort</option>
+        <option value="Cedar Highlands">Cedar Highlands</option>
+        <option value="Cedar Hills">Cedar Hills</option>
+        <option value="Centerfield">Centerfield</option>
+        <option value="Centerville">Centerville</option>
+        <option value="Central Valley">Central Valley</option>
+        <option value="Charleston">Charleston</option>
+        <option value="Circleville">Circleville</option>
+        <option value="Clarkston">Clarkston</option>
+        <option value="Clawson">Clawson</option>
+        <option value="Clearfield">Clearfield</option>
+        <option value="Cleveland">Cleveland</option>
+        <option value="Clinton">Clinton</option>
+        <option value="Coalville">Coalville</option>
+        <option value="Copperton Township">Copperton Township</option>
+        <option value="Corinne">Corinne</option>
+        <option value="Cornish">Cornish</option>
+        <option value="Cottonwood Heights">Cottonwood Heights</option>
+        <option value="Daggett County">Daggett County</option>
+        <option value="Daniel">Daniel</option>
+        <option value="Davis County">Davis County</option>
+        <option value="Delta">Delta</option>
+        <option value="Deweyville">Deweyville</option>
+        <option value="Draper">Draper</option>
+        <option value="Draper South">Draper South</option>
+        <option value="Duchesne City">Duchesne City</option>
+        <option value="Duchesne County">Duchesne County</option>
+        <option value="Dutch John">Dutch John</option>
+        <option value="Eagle Mountain">Eagle Mountain</option>
+        <option value="East Carbon">East Carbon</option>
+        <option value="Elk Ridge">Elk Ridge</option>
+        <option value="Elmo">Elmo</option>
+        <option value="Elsinore">Elsinore</option>
+        <option value="Elwood">Elwood</option>
+        <option value="Emery City">Emery City</option>
+        <option value="Emery County">Emery County</option>
+        <option value="Emigration Canyon Township">Emigration Canyon Township</option>
+        <option value="Enoch">Enoch</option>
+        <option value="Enterprise">Enterprise</option>
+        <option value="Ephraim">Ephraim</option>
+        <option value="Erda">Erda</option>
+        <option value="Escalante">Escalante</option>
+        <option value="Eureka">Eureka</option>
+        <option value="Fairfield">Fairfield</option>
+        <option value="Fairview">Fairview</option>
+        <option value="Falcon Hill Clearfield">Falcon Hill Clearfield</option>
+        <option value="Falcon Hill Davis">Falcon Hill Davis</option>
+        <option value="Falcon Hill Riverdale">Falcon Hill Riverdale</option>
+        <option value="Falcon Hill Roy">Falcon Hill Roy</option>
+        <option value="Falcon Hill Sunset">Falcon Hill Sunset</option>
+        <option value="Farmington">Farmington</option>
+        <option value="Farr West">Farr West</option>
+        <option value="Fayette">Fayette</option>
+        <option value="Ferron">Ferron</option>
+        <option value="Fielding">Fielding</option>
+        <option value="Fillmore">Fillmore</option>
+        <option value="Fountain Green">Fountain Green</option>
+        <option value="Francis">Francis</option>
+        <option value="Fruit Heights">Fruit Heights</option>
+        <option value="Garden City">Garden City</option>
+        <option value="Garfield County">Garfield County</option>
+        <option value="Garland">Garland</option>
+        <option value="Genola">Genola</option>
+        <option value="Glendale">Glendale</option>
+        <option value="Glenwood">Glenwood</option>
+        <option value="Goshen">Goshen</option>
+        <option value="Grand County">Grand County</option>
+        <option value="Grantsville">Grantsville</option>
+        <option value="Green River">Green River</option>
+        <option value="Gunnison">Gunnison</option>
+        <option value="Hanksville">Hanksville</option>
+        <option value="Harrisville">Harrisville</option>
+        <option value="Hatch">Hatch</option>
+        <option value="Heber">Heber</option>
+        <option value="Helper">Helper</option>
+        <option value="Henefer">Henefer</option>
+        <option value="Henrieville">Henrieville</option>
+        <option value="Herriman">Herriman</option>
+        <option value="Hideout">Hideout</option>
+        <option value="Highland">Highland</option>
+        <option value="Hildale">Hildale</option>
+        <option value="Hinckley">Hinckley</option>
+        <option value="Holden">Holden</option>
+        <option value="Holladay">Holladay</option>
+        <option value="Honeyville">Honeyville</option>
+        <option value="Hooper">Hooper</option>
+        <option value="Howell">Howell</option>
+        <option value="Huntington">Huntington</option>
+        <option value="Huntsville">Huntsville</option>
+        <option value="Hurricane">Hurricane</option>
+        <option value="Hyde Park">Hyde Park</option>
+        <option value="Hyrum">Hyrum</option>
+        <option value="Independence">Independence</option>
+        <option value="Interlaken">Interlaken</option>
+        <option value="Iron County">Iron County</option>
+        <option value="Ivins">Ivins</option>
+        <option value="Joseph">Joseph</option>
+        <option value="Juab County">Juab County</option>
+        <option value="Junction">Junction</option>
+        <option value="Kamas">Kamas</option>
+        <option value="Kanab">Kanab</option>
+        <option value="Kanarraville">Kanarraville</option>
+        <option value="Kane County">Kane County</option>
+        <option value="Kanosh">Kanosh</option>
+        <option value="Kaysville">Kaysville</option>
+        <option value="Kearns Township">Kearns Township</option>
+        <option value="Kingston">Kingston</option>
+        <option value="Koosharem">Koosharem</option>
+        <option value="La Verkin">La Verkin</option>
+        <option value="Lakepoint">Lakepoint</option>
+        <option value="Laketown">Laketown</option>
+        <option value="Layton">Layton</option>
+        <option value="Leamington">Leamington</option>
+        <option value="Leeds">Leeds</option>
+        <option value="Lehi">Lehi</option>
+        <option value="Levan">Levan</option>
+        <option value="Lewiston">Lewiston</option>
+        <option value="Lincoln">Lincoln</option>
+        <option value="Lindon">Lindon</option>
+        <option value="Loa">Loa</option>
+        <option value="Logan">Logan</option>
+        <option value="Lyman">Lyman</option>
+        <option value="Lynndyl">Lynndyl</option>
+        <option value="Magna Township">Magna Township</option>
+        <option value="Manila">Manila</option>
+        <option value="Manti">Manti</option>
+        <option value="Mantua">Mantua</option>
+        <option value="Mapleton">Mapleton</option>
+        <option value="Marriot-Slaterville">Marriot-Slaterville</option>
+        <option value="Marysvale">Marysvale</option>
+        <option value="Mayfield">Mayfield</option>
+        <option value="Meadow">Meadow</option>
+        <option value="Mendon">Mendon</option>
+        <option value="Midvale">Midvale</option>
+        <option value="Midway">Midway</option>
+        <option value="Milford">Milford</option>
+        <option value="Military Recreation - Hideout">Military Recreation - Hideout</option>
+        <option value="Military Recreation - Park City">Military Recreation - Park City</option>
+        <option value="Military Recreation - Wasatch">Military Recreation - Wasatch</option>
+        <option value="Millard County">Millard County</option>
+        <option value="Millcreek">Millcreek</option>
+        <option value="Millville">Millville</option>
+        <option value="Minersville">Minersville</option>
+        <option value="Moab">Moab</option>
+        <option value="Mona">Mona</option>
+        <option value="Monroe">Monroe</option>
+        <option value="Monticello">Monticello</option>
+        <option value="Morgan City">Morgan City</option>
+        <option value="Morgan County">Morgan County</option>
+        <option value="Moroni">Moroni</option>
+        <option value="Mt. Pleasant">Mt. Pleasant</option>
+        <option value="Murray">Murray</option>
+        <option value="Myton">Myton</option>
+        <option value="Naples">Naples</option>
+        <option value="Nephi">Nephi</option>
+        <option value="New Harmony Town">New Harmony Town</option>
+        <option value="Newton">Newton</option>
+        <option value="Nibley">Nibley</option>
+        <option value="North Logan">North Logan</option>
+        <option value="North Ogden">North Ogden</option>
+        <option value="North Salt Lake">North Salt Lake</option>
+        <option value="Oak City">Oak City</option>
+        <option value="Oakley">Oakley</option>
+        <option value="Ogden">Ogden</option>
+        <option value="Orangeville">Orangeville</option>
+        <option value="Orderville">Orderville</option>
+        <option value="Orem">Orem</option>
+        <option value="Panguitch">Panguitch</option>
+        <option value="Paradise">Paradise</option>
+        <option value="Paragonah">Paragonah</option>
+        <option value="Park City">Park City</option>
+        <option value="Park City East">Park City East</option>
+        <option value="Parowan">Parowan</option>
+        <option value="Payson">Payson</option>
+        <option value="Perry">Perry</option>
+        <option value="Piute County">Piute County</option>
+        <option value="Plain City">Plain City</option>
+        <option value="Pleasant Grove">Pleasant Grove</option>
+        <option value="Pleasant View">Pleasant View</option>
+        <option value="Plymouth">Plymouth</option>
+        <option value="Portage">Portage</option>
+        <option value="Price">Price</option>
+        <option value="Providence">Providence</option>
+        <option value="Provo">Provo</option>
+        <option value="Randolph">Randolph</option>
+        <option value="Redmond">Redmond</option>
+        <option value="Rich County">Rich County</option>
+        <option value="Richfield">Richfield</option>
+        <option value="Richmond">Richmond</option>
+        <option value="River Heights">River Heights</option>
+        <option value="Riverdale">Riverdale</option>
+        <option value="Riverton">Riverton</option>
+        <option value="Rockville">Rockville</option>
+        <option value="Rocky Ridge">Rocky Ridge</option>
+        <option value="Roosevelt">Roosevelt</option>
+        <option value="Roy">Roy</option>
+        <option value="Rush Valley">Rush Valley</option>
+        <option value="Salem">Salem</option>
+        <option value="Salina">Salina</option>
+        <option value="Salt Lake City">Salt Lake City</option>
+        <option value="Salt Lake County">Salt Lake County</option>
+        <option value="San Juan County">San Juan County</option>
+        <option value="Sandy">Sandy</option>
+        <option value="Sanpete County">Sanpete County</option>
+        <option value="Santa Clara">Santa Clara</option>
+        <option value="Santaquin">Santaquin</option>
+        <option value="Santaquin South">Santaquin South</option>
+        <option value="Saratoga Springs">Saratoga Springs</option>
+        <option value="Scipio">Scipio</option>
+        <option value="Scofield">Scofield</option>
+        <option value="Sevier County">Sevier County</option>
+        <option value="Sigurd">Sigurd</option>
+        <option value="Smithfield">Smithfield</option>
+        <option value="Snowville">Snowville</option>
+        <option value="Snyderville Basin Tr">Snyderville Basin Tr</option>
+        <option value="South Jordan">South Jordan</option>
+        <option value="South Ogden">South Ogden</option>
+        <option value="South Salt Lake">South Salt Lake</option>
+        <option value="South Weber">South Weber</option>
+        <option value="Spanish Fork">Spanish Fork</option>
+        <option value="Spring City">Spring City</option>
+        <option value="Springdale">Springdale</option>
+        <option value="Springville">Springville</option>
+        <option value="St. George">St. George</option>
+        <option value="Stansbury Park">Stansbury Park</option>
+        <option value="Sterling">Sterling</option>
+        <option value="Stockton">Stockton</option>
+        <option value="Summit County">Summit County</option>
+        <option value="Sunset">Sunset</option>
+        <option value="Syracuse">Syracuse</option>
+        <option value="Tabiona">Tabiona</option>
+        <option value="Taylorsville">Taylorsville</option>
+        <option value="Tooele City">Tooele City</option>
+        <option value="Tooele County">Tooele County</option>
+        <option value="Toquerville">Toquerville</option>
+        <option value="Torrey">Torrey</option>
+        <option value="Tremonton">Tremonton</option>
+        <option value="Trenton">Trenton</option>
+        <option value="Tropic">Tropic</option>
+        <option value="Uintah">Uintah</option>
+        <option value="Uintah County">Uintah County</option>
+        <option value="UT Data Ctr SL Co">UT Data Ctr SL Co</option>
+        <option value="UT Data Ctr UT Co">UT Data Ctr UT Co</option>
+        <option value="Utah County">Utah County</option>
+        <option value="Vernal">Vernal</option>
+        <option value="Vernon">Vernon</option>
+        <option value="Vineyard">Vineyard</option>
+        <option value="Virgin">Virgin</option>
+        <option value="Wales">Wales</option>
+        <option value="Wallsburg">Wallsburg</option>
+        <option value="Wasatch County">Wasatch County</option>
+        <option value="Washington City">Washington City</option>
+        <option value="Washington County">Washington County</option>
+        <option value="Washington Terrace">Washington Terrace</option>
+        <option value="Wayne County">Wayne County</option>
+        <option value="Weber County">Weber County</option>
+        <option value="Wellington">Wellington</option>
+        <option value="Wellsville">Wellsville</option>
+        <option value="Wendover">Wendover</option>
+        <option value="West Bountiful">West Bountiful</option>
+        <option value="West Haven">West Haven</option>
+        <option value="West Jordan">West Jordan</option>
+        <option value="West Point">West Point</option>
+        <option value="West Valley City">West Valley City</option>
+        <option value="White City Township">White City Township</option>
+        <option value="Willard">Willard</option>
+        <option value="Woodland Hills">Woodland Hills</option>
+        <option value="Woodruff">Woodruff</option>
+        <option value="Woods Cross">Woods Cross</option>
+        <option value="OUTSIDE CITY LIMITS">OUTSIDE CITY LIMITS</option>
+    </select>
+    <br />
+
+    <label asp-for="county_name">County:</label>
+    <select asp-for="county_name">
+        <option value="Beaver">Beaver</option>
+        <option value="Box Elder"> Box Elder</option>
+        <option value="Cache"> Cache</option>
+        <option value="Carbon"> Carbon</option>
+        <option value="Daggett"> Daggett</option>
+        <option value="Davis"> Davis</option>
+        <option value="Duchesne"> Duchesne</option>
+        <option value="Emery"> Emery</option>
+        <option value="Garfield"> Garfield</option>
+        <option value="Grand"> Grand</option>
+        <option value="Beaver">Beaver</option>
+        <option value="Box Elder"> Box Elder</option>
+        <option value="Iron"> Iron</option>
+        <option value="Juab"> Juab</option>
+        <option value="Kane"> Kane</option>
+        <option value="Millard"> Millard</option>
+        <option value="Morgan"> Morgan</option>
+        <option value="Piute"> Piute</option>
+        <option value="Rich"> Rich</option>
+        <option value="Salt Lake"> Salt Lake</option>
+        <option value="San Juan"> San Juan</option>
+        <option value="Sanpete"> Sanpete</option>
+        <option value="Sevier"> Sevier County </option>
+        <option value="Summit"> Summit</option>
+        <option value="Tooele"> Tooele</option>
+        <option value="Uintah"> Uintah</option>
+        <option value="Utah"> Utah</option>
+        <option value="Wasatch"> Wasatch</option>
+        <option value="Washington"> Washington</option>
+        <option value="Wayne"> Wayne</option>
+        <option value="Weber"> Weber</option>
+    </select>
+    <br />
+
+    <label asp-for="route">Route:</label>
+    <input asp-for="route" />
+    <br />
+
+    <label asp-for="milepoint">Milepoint:</label>
+    <input asp-for="crash_datetime" />
+    <br />
+
+    <label asp-for="lat_utm_y">Latitude:</label>
+    <input asp-for="lat_utm_y" />
+    <br />
+
+    <label asp-for="long_utm_x">Longitude:</label>
+    <input asp-for="long_utm_x" />
+    <br />
+
+    <label asp-for="work_zone_related">Work Zone Related:</label>
+    <select asp-for="work_zone_related">
+        <option value="False">No</option>
+        <option value="True">Yes</option>
+    </select>
+    <br />
+
+    <label asp-for="pedestrian_involved">Pedestrian Involved:</label>
+    <select asp-for="pedestrian_involved">
+        <option value="False">No</option>
+        <option value="True">Yes</option>
+    </select>
+    <br />
+
+    <label asp-for="bicyclist_involved">Bicyclist Involved:</label>
+    <select asp-for="bicyclist_involved">
+        <option value="False">No</option>
+        <option value="True">Yes</option>
+    </select>
+    <br />
+
+    <label asp-for="motorcycle_involved">Motorcyle Involved:</label>
+    <select asp-for="motorcycle_involved">
+        <option value="False">No</option>
+        <option value="True">Yes</option>
+    </select>
+    <br />
+
+
+    <label asp-for="improper_restraint">Not Wearing Seatbelt Properly:</label>
+    <select asp-for="improper_restraint">
+        <option value="False">Properly Buckled</option>
+        <option value="True">Improperly Buckled</option>
+    </select>
+    <br />
+
+
+    <label asp-for="unrestrained">Wearing Seatbelt:</label>
+    <select asp-for="unrestrained">
+        <option value="False">Yes</option>
+        <option value="True">No</option>
+    </select>
+    <br />
+
+    <label asp-for="dui">Substances involved:</label>
+    <select asp-for="dui">
+        <option value="False">No</option>
+        <option value="True">Yes</option>
+    </select>
+    <br />
+
+
+    <label asp-for="intersection_related">Crash at Intersection:</label>
+    <select asp-for="intersection_related">
+        <option value="False">No</option>
+        <option value="True">Yes</option>
+    </select>
+    <br />
+
+
+    <label asp-for="wild_animal_related">Wild Animal:</label>
+    <select asp-for="wild_animal_related">
+        <option value="False">No</option>
+        <option value="True">Yes</option>
+    </select>
+    <br />
+
+    <label asp-for="domestic_animal_related">Domestic Animal:</label>
+    <select asp-for="domestic_animal_related">
+        <option value="False">No</option>
+        <option value="True">Yes</option>
+    </select>
+    <br />
+
+    <label asp-for="overturn_rollover">Overturn Rollover:</label>
+    <select asp-for="overturn_rollover">
+        <option value="False">No</option>
+        <option value="True">Yes</option>
+    </select>
+    <br />
+
+    <label asp-for="commercial_motor_veh_involved">Commercial Vehicle Involved:</label>
+    <select asp-for="commercial_motor_veh_involved">
+        <option value="False">No</option>
+        <option value="True">Yes</option>
+    </select>
+    <br />
+
+    <label asp-for="teenage_driver_involved">Teenage Driver:</label>
+    <select asp-for="teenage_driver_involved">
+        <option value="False">No</option>
+        <option value="True">Yes</option>
+    </select>
+    <br />
+
+
+    <label asp-for="older_driver_involved">Older Driver:</label>
+    <select asp-for="older_driver_involved">
+        <option value="False">No</option>
+        <option value="True">Yes</option>
+    </select>
+    <br />
+
+
+    <label asp-for="single_vehicle">Single Vehicle:</label>
+    <select asp-for="single_vehicle">
+        <option value="False">No</option>
+        <option value="True">Yes</option>
+    </select>
+    <br />
+
+    <label asp-for="night_dark_condition">Night/Dark condition:</label>
+    <select asp-for="night_dark_condition">
+        <option value="False">No</option>
+        <option value="True">Yes</option>
+    </select>
+    <br />
+
+    <label asp-for="distracted_driving">Distracted Driving:</label>
+    <select asp-for="distracted_driving">
+        <option value="False">No</option>
+        <option value="True">Yes</option>
+    </select>
+    <br />
+
+    <label asp-for="drowsy_driving">Drowsy Driving:</label>
+    <select asp-for="drowsy_driving">
+        <option value="False">No</option>
+        <option value="True">Yes</option>
+    </select>
+    <br />
+
+    <label asp-for="roadway_departure">Roadway Departure:</label>
+    <select asp-for="roadway_departure">
+        <option value="False">No</option>
+        <option value="True">Yes</option>
+    </select>
+    <br />
+
+    <button type="submit">Submit</button>
+</form>

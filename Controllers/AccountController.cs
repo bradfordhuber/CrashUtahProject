@@ -41,7 +41,7 @@ namespace CrashUtahProject.Controllers
 
                     if ((await signInManager.PasswordSignInAsync(user, loginModel.Password, false, false)).Succeeded)
                     {
-                        return Redirect(loginModel.ReturnUrl ?? "/Admin");
+                        return Redirect(loginModel.ReturnUrl ?? "/");
                     }
                 }
             }
@@ -56,11 +56,19 @@ namespace CrashUtahProject.Controllers
             return Redirect(returnUrl);
         }
 
-        [HttpPost]
-        public IActionResult Edit(int id)
-        {
-            return Redirect("/Admin/Edit/{id}");
-        }
+        //public async Task<RedirectResult> Logout(string returnUrl = "/")
+        //{
+        //    await signInManager.SignOutAsync();
+
+        //    return RedirectResult;
+        //}
+
+        //public IActionResult Logout()
+        //{
+        //    signInManager.SignOutAsync
+
+        //    return Redirect(returnUrl);
+        //}
+
     }
 }
-

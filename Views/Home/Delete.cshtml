@@ -1,0 +1,11 @@
+﻿@model Accident
+
+<h2>Confirm Deletion</h2>
+<h3>Are you sure you want to delete the record for @Model.crash_id?</h3>
+
+<!--Confirm deletion form-->
+<form method="post" asp-controller="Home" asp-action="Delete">
+    <a asp-controller="Home" asp-action="Data" class="btn-primary">Cancel</a>
+    <button type="submit">Delete</button>
+    <input type="hidden" asp-for="crash_id" />
+</form>

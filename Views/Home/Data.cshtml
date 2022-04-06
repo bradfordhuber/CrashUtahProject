@@ -60,15 +60,29 @@
         </div>
         <div class="nav-footer-extra">
             <div class="nav-item separator"></div>
-            <a asp-controller="Home" class="nav-item bottom-item-inner dark-text w-inline-block">
+            @*<a asp-controller="Home" class="nav-item bottom-item-inner dark-text w-inline-block">*@
                 @*<div data-w-id="f8490152-5ae2-0a4c-a947-8d25251672e6" class="nav-item-icon user-bg">
-                        <div class="user-icon"><strong class="bold-text">M</strong></div>
-                    </div>*@
-                <div ms-data="first-name" data-w-id="f8490152-5ae2-0a4c-a947-8d25251672ea" class="nav-label">Log In</div>
+            <div class="user-icon"><strong class="bold-text">M</strong></div>
+        </div>*@
+
+
+
+                @if (this.User.Identity.IsAuthenticated)
+                {
+        <div ms-data="first-name" data-w-id="f8490152-5ae2-0a4c-a947-8d25251672ea" class="nav-label">
+            @*<a asp-controller="Account">Log Out</a>*@
+            <a class="btn btn-sm btn-primary" href="/account/logout">Log Out</a>
+        </div>
+                }
+                else
+                {
+                <div ms-data="first-name" data-w-id="f8490152-5ae2-0a4c-a947-8d25251672ea" class="nav-label"><a asp-controller="Account" asp-action="Login">Log In</a></div>
+                }
+
                 @*<div class="menu-dots">
-                        <div data-w-id="f8490152-5ae2-0a4c-a947-8d25251672ed" class="icon nav-foot-icon"></div>
-                    </div>*@
-            </a>
+            <div data-w-id="f8490152-5ae2-0a4c-a947-8d25251672ed" class="icon nav-foot-icon"></div>
+        </div>*@
+            @*</a>*@
         </div>
     </div>
     <div data-w-id="f8490152-5ae2-0a4c-a947-8d25251672ef" class="nav-back"></div>
@@ -78,14 +92,358 @@
         <p>Search By:</p>
         @using (Html.BeginForm("Data", "Home", FormMethod.Get))
         {
-            
+            @Html.DropDownList("searchByCity", new List<SelectListItem>
+                {
+                    new SelectListItem { Text = "Alpine", Value ="Alpine", Selected=true},
+                    new SelectListItem { Text = "Alta", Value ="Alta"},
+                    new SelectListItem { Text = "Altamont", Value ="Altamont"},
+                    new SelectListItem { Text = "Alton", Value ="Alton"},
+                    new SelectListItem { Text = "Amalga", Value ="Amalga"},
+                    new SelectListItem { Text = "American Fork", Value ="American Fork"},
+                    new SelectListItem { Text = "Annabella", Value ="Annabella"},
+                    new SelectListItem { Text = "Antimony", Value ="Antimony"},
+                    new SelectListItem { Text = "Apple Valley", Value ="Apple Valley"},
+                    new SelectListItem { Text = "Aurora", Value ="Aurora"},
+                    new SelectListItem { Text = "Ballard", Value ="Ballard"},
+                    new SelectListItem { Text = "Bear River", Value ="Bear River"},
+                    new SelectListItem { Text = "Beaver City", Value ="Beaver City"},
+                    new SelectListItem { Text = "Beaver", Value ="Beaver"},
+                    new SelectListItem { Text = "Bicknell", Value ="Bicknell"},
+                    new SelectListItem { Text = "Big Water", Value ="Big Water"},
+                    new SelectListItem { Text = "Blanding", Value ="Blanding"},
+                    new SelectListItem { Text = "Bluff", Value ="Bluff"},
+                    new SelectListItem { Text = "Bluffdale", Value ="Bluffdale"},
+                    new SelectListItem { Text = "Bluffdale South", Value ="Bluffdale South"},
+                    new SelectListItem { Text = "Boulder", Value ="Boulder"},
+                    new SelectListItem { Text = "Bountiful", Value ="Bountiful"},
+                    new SelectListItem { Text = "Box Elder", Value ="Box Elder"},
+                    new SelectListItem { Text = "Brian Head", Value ="Brian Head"},
+                    new SelectListItem { Text = "Brigham City", Value ="Brigham City"},
+                    new SelectListItem { Text = "Brighton", Value ="Brighton"},
+                    new SelectListItem { Text = "Bryce Canyon", Value ="Bryce Canyon"},
+                    new SelectListItem { Text = "Cache", Value ="Cache"},
+                    new SelectListItem { Text = "Cache Valley Transit", Value ="Cache Valley Transit"},
+                    new SelectListItem { Text = "Cannonville", Value ="Cannonville"},
+                    new SelectListItem { Text = "Carbon", Value ="Carbon"},
+                    new SelectListItem { Text = "Castle Dale", Value ="Castle Dale"},
+                    new SelectListItem { Text = "Castle Valley", Value ="Castle Valley"},
+                    new SelectListItem { Text = "Cedar City", Value ="Cedar City"},
+                    new SelectListItem { Text = "Cedar Fort", Value ="Cedar Fort"},
+                    new SelectListItem { Text = "Cedar Highlands", Value ="Cedar Highlands"},
+                    new SelectListItem { Text = "Cedar Hills", Value ="Cedar Hills"},
+                    new SelectListItem { Text = "Centerfield", Value ="Centerfield"},
+                    new SelectListItem { Text = "Centerville", Value ="Centerville"},
+                    new SelectListItem { Text = "Central Valley", Value ="Central Valley"},
+                    new SelectListItem { Text = "Charleston", Value ="Charleston"},
+                    new SelectListItem { Text = "Circleville", Value ="Circleville"},
+                    new SelectListItem { Text = "Clarkston", Value ="Clarkston"},
+                    new SelectListItem { Text = "Clawson", Value ="Clawson"},
+                    new SelectListItem { Text = "Clearfield", Value ="Clearfield"},
+                    new SelectListItem { Text = "Cleveland", Value ="Cleveland"},
+                    new SelectListItem { Text = "Clinton", Value ="Clinton"},
+                    new SelectListItem { Text = "Coalville", Value ="Coalville"},
+                    new SelectListItem { Text = "Copperton Township", Value ="Copperton Township"},
+                    new SelectListItem { Text = "Corinne", Value ="Corinne"},
+                    new SelectListItem { Text = "Cornish", Value ="Cornish"},
+                    new SelectListItem { Text = "Cottonwood Heights", Value ="Cottonwood Heights"},
+                    new SelectListItem { Text = "Daggett", Value ="Daggett"},
+                    new SelectListItem { Text = "Daniel", Value ="Daniel"},
+                    new SelectListItem { Text = "Davis", Value ="Davis"},
+                    new SelectListItem { Text = "Delta", Value ="Delta"},
+                    new SelectListItem { Text = "Deweyville", Value ="Deweyville"},
+                    new SelectListItem { Text = "Draper", Value ="Draper"},
+                    new SelectListItem { Text = "Draper South", Value ="Draper South"},
+                    new SelectListItem { Text = "Duchesne City", Value ="Duchesne City"},
+                    new SelectListItem { Text = "Duchesne", Value ="Duchesne"},
+                    new SelectListItem { Text = "Dutch John", Value ="Dutch John"},
+                    new SelectListItem { Text = "Eagle Mountain", Value ="Eagle Mountain"},
+                    new SelectListItem { Text = "East Carbon", Value ="East Carbon"},
+                    new SelectListItem { Text = "Elk Ridge", Value ="Elk Ridge"},
+                    new SelectListItem { Text = "Elmo", Value ="Elmo"},
+                    new SelectListItem { Text = "Elsinore", Value ="Elsinore"},
+                    new SelectListItem { Text = "Elwood", Value ="Elwood"},
+                    new SelectListItem { Text = "Emery City", Value ="Emery City"},
+                    new SelectListItem { Text = "Emery", Value ="Emery"},
+                    new SelectListItem { Text = "Emigration Canyon Township", Value ="Emigration Canyon Township"},
+                    new SelectListItem { Text = "Enoch", Value ="Enoch"},
+                    new SelectListItem { Text = "Enterprise", Value ="Enterprise"},
+                    new SelectListItem { Text = "Ephraim", Value ="Ephraim"},
+                    new SelectListItem { Text = "Erda", Value ="Erda"},
+                    new SelectListItem { Text = "Escalante", Value ="Escalante"},
+                    new SelectListItem { Text = "Eureka", Value ="Eureka"},
+                    new SelectListItem { Text = "Fairfield", Value ="Fairfield"},
+                    new SelectListItem { Text = "Fairview", Value ="Fairview"},
+                    new SelectListItem { Text = "Falcon Hill Clearfield", Value ="Falcon Hill Clearfield"},
+                    new SelectListItem { Text = "Falcon Hill Davis", Value ="Falcon Hill Davis"},
+                    new SelectListItem { Text = "Falcon Hill Riverdale", Value ="Falcon Hill Riverdale"},
+                    new SelectListItem { Text = "Falcon Hill Roy", Value ="Falcon Hill Roy"},
+                    new SelectListItem { Text = "Falcon Hill Sunset", Value ="Falcon Hill Sunset"},
+                    new SelectListItem { Text = "Farmington", Value ="Farmington"},
+                    new SelectListItem { Text = "Farr West", Value ="Farr West"},
+                    new SelectListItem { Text = "Fayette", Value ="Fayette"},
+                    new SelectListItem { Text = "Ferron", Value ="Ferron"},
+                    new SelectListItem { Text = "Fielding", Value ="Fielding"},
+                    new SelectListItem { Text = "Fillmore", Value ="Fillmore"},
+                    new SelectListItem { Text = "Fountain Green", Value ="Fountain Green"},
+                    new SelectListItem { Text = "Francis", Value ="Francis"},
+                    new SelectListItem { Text = "Fruit Heights", Value ="Fruit Heights"},
+                    new SelectListItem { Text = "Garden City", Value ="Garden City"},
+                    new SelectListItem { Text = "Garfield", Value ="Garfield"},
+                    new SelectListItem { Text = "Garland", Value ="Garland"},
+                    new SelectListItem { Text = "Genola", Value ="Genola"},
+                    new SelectListItem { Text = "Glendale", Value ="Glendale"},
+                    new SelectListItem { Text = "Glenwood", Value ="Glenwood"},
+                    new SelectListItem { Text = "Goshen", Value ="Goshen"},
+                    new SelectListItem { Text = "Grand", Value ="Grand"},
+                    new SelectListItem { Text = "Grantsville", Value ="Grantsville"},
+                    new SelectListItem { Text = "Green River", Value ="Green River"},
+                    new SelectListItem { Text = "Gunnison", Value ="Gunnison"},
+                    new SelectListItem { Text = "Hanksville", Value ="Hanksville"},
+                    new SelectListItem { Text = "Harrisville", Value ="Harrisville"},
+                    new SelectListItem { Text = "Hatch", Value ="Hatch"},
+                    new SelectListItem { Text = "Heber", Value ="Heber"},
+                    new SelectListItem { Text = "Helper", Value ="Helper"},
+                    new SelectListItem { Text = "Henefer", Value ="Henefer"},
+                    new SelectListItem { Text = "Henrieville", Value ="Henrieville"},
+                    new SelectListItem { Text = "Herriman", Value ="Herriman"},
+                    new SelectListItem { Text = "Hideout", Value ="Hideout"},
+                    new SelectListItem { Text = "Highland", Value ="Highland"},
+                    new SelectListItem { Text = "Hildale", Value ="Hildale"},
+                    new SelectListItem { Text = "Hinckley", Value ="Hinckley"},
+                    new SelectListItem { Text = "Holden", Value ="Holden"},
+                    new SelectListItem { Text = "Holladay", Value ="Holladay"},
+                    new SelectListItem { Text = "Honeyville", Value ="Honeyville"},
+                    new SelectListItem { Text = "Hooper", Value ="Hooper"},
+                    new SelectListItem { Text = "Howell", Value ="Howell"},
+                    new SelectListItem { Text = "Huntington", Value ="Huntington"},
+                    new SelectListItem { Text = "Huntsville", Value ="Huntsville"},
+                    new SelectListItem { Text = "Hurricane", Value ="Hurricane"},
+                    new SelectListItem { Text = "Hyde Park", Value ="Hyde Park"},
+                    new SelectListItem { Text = "Hyrum", Value ="Hyrum"},
+                    new SelectListItem { Text = "Independence", Value ="Independence"},
+                    new SelectListItem { Text = "Interlaken", Value ="Interlaken"},
+                    new SelectListItem { Text = "Iron", Value ="Iron"},
+                    new SelectListItem { Text = "Ivins", Value ="Ivins"},
+                    new SelectListItem { Text = "Joseph", Value ="Joseph"},
+                    new SelectListItem { Text = "Juab", Value ="Juab"},
+                    new SelectListItem { Text = "Junction", Value ="Junction"},
+                    new SelectListItem { Text = "Kamas", Value ="Kamas"},
+                    new SelectListItem { Text = "Kanab", Value ="Kanab"},
+                    new SelectListItem { Text = "Kanarraville", Value ="Kanarraville"},
+                    new SelectListItem { Text = "Kane", Value ="Kane"},
+                    new SelectListItem { Text = "Kanosh", Value ="Kanosh"},
+                    new SelectListItem { Text = "Kaysville", Value ="Kaysville"},
+                    new SelectListItem { Text = "Kearns Township", Value ="Kearns Township"},
+                    new SelectListItem { Text = "Kingston", Value ="Kingston"},
+                    new SelectListItem { Text = "Koosharem", Value ="Koosharem"},
+                    new SelectListItem { Text = "La Verkin", Value ="La Verkin"},
+                    new SelectListItem { Text = "Lakepoint", Value ="Lakepoint"},
+                    new SelectListItem { Text = "Laketown", Value ="Laketown"},
+                    new SelectListItem { Text = "Layton", Value ="Layton"},
+                    new SelectListItem { Text = "Leamington", Value ="Leamington"},
+                    new SelectListItem { Text = "Leeds", Value ="Leeds"},
+                    new SelectListItem { Text = "Lehi", Value ="Lehi"},
+                    new SelectListItem { Text = "Levan", Value ="Levan"},
+                    new SelectListItem { Text = "Lewiston", Value ="Lewiston"},
+                    new SelectListItem { Text = "Lincoln", Value ="Lincoln"},
+                    new SelectListItem { Text = "Lindon", Value ="Lindon"},
+                    new SelectListItem { Text = "Loa", Value ="Loa"},
+                    new SelectListItem { Text = "Logan", Value ="Logan"},
+                    new SelectListItem { Text = "Lyman", Value ="Lyman"},
+                    new SelectListItem { Text = "Lynndyl", Value ="Lynndyl"},
+                    new SelectListItem { Text = "Magna Township", Value ="Magna Township"},
+                    new SelectListItem { Text = "Manila", Value ="Manila"},
+                    new SelectListItem { Text = "Manti", Value ="Manti"},
+                    new SelectListItem { Text = "Mantua", Value ="Mantua"},
+                    new SelectListItem { Text = "Mapleton", Value ="Mapleton"},
+                    new SelectListItem { Text = "Marriot-Slaterville", Value ="Marriot-Slaterville"},
+                    new SelectListItem { Text = "Marysvale", Value ="Marysvale"},
+                    new SelectListItem { Text = "Mayfield", Value ="Mayfield"},
+                    new SelectListItem { Text = "Meadow", Value ="Meadow"},
+                    new SelectListItem { Text = "Mendon", Value ="Mendon"},
+                    new SelectListItem { Text = "Midvale", Value ="Midvale"},
+                    new SelectListItem { Text = "Midway", Value ="Midway"},
+                    new SelectListItem { Text = "Milford", Value ="Milford"},
+                    new SelectListItem { Text = "Military Recreation - Hideout", Value ="Military Recreation - Hideout"},
+                    new SelectListItem { Text = "Military Recreation - Park City", Value ="Military Recreation - Park City"},
+                    new SelectListItem { Text = "Military Recreation - Wasatch", Value ="Military Recreation - Wasatch"},
+                    new SelectListItem { Text = "Millard", Value ="Millard"},
+                    new SelectListItem { Text = "Millcreek", Value ="Millcreek"},
+                    new SelectListItem { Text = "Millville", Value ="Millville"},
+                    new SelectListItem { Text = "Minersville", Value ="Minersville"},
+                    new SelectListItem { Text = "Moab", Value ="Moab"},
+                    new SelectListItem { Text = "Mona", Value ="Mona"},
+                    new SelectListItem { Text = "Monroe", Value ="Monroe"},
+                    new SelectListItem { Text = "Monticello", Value ="Monticello"},
+                    new SelectListItem { Text = "Morgan City", Value ="Morgan City"},
+                    new SelectListItem { Text = "Morgan", Value ="Morgan"},
+                    new SelectListItem { Text = "Moroni", Value ="Moroni"},
+                    new SelectListItem { Text = "Mt. Pleasant", Value ="Mt. Pleasant"},
+                    new SelectListItem { Text = "Murray", Value ="Murray"},
+                    new SelectListItem { Text = "Myton", Value ="Myton"},
+                    new SelectListItem { Text = "Naples", Value ="Naples"},
+                    new SelectListItem { Text = "Nephi", Value ="Nephi"},
+                    new SelectListItem { Text = "New Harmony Town", Value ="New Harmony Town"},
+                    new SelectListItem { Text = "Newton", Value ="Newton"},
+                    new SelectListItem { Text = "Nibley", Value ="Nibley"},
+                    new SelectListItem { Text = "North Logan", Value ="North Logan"},
+                    new SelectListItem { Text = "North Ogden", Value ="North Ogden"},
+                    new SelectListItem { Text = "North Salt Lake", Value ="North Salt Lake"},
+                    new SelectListItem { Text = "Oak City", Value ="Oak City"},
+                    new SelectListItem { Text = "Oakley", Value ="Oakley"},
+                    new SelectListItem { Text = "Ogden", Value ="Ogden"},
+                    new SelectListItem { Text = "Orangeville", Value ="Orangeville"},
+                    new SelectListItem { Text = "Orderville", Value ="Orderville"},
+                    new SelectListItem { Text = "Orem", Value ="Orem"},
+                    new SelectListItem { Text = "Panguitch", Value ="Panguitch"},
+                    new SelectListItem { Text = "Paradise", Value ="Paradise"},
+                    new SelectListItem { Text = "Paragonah", Value ="Paragonah"},
+                    new SelectListItem { Text = "Park City", Value ="Park City"},
+                    new SelectListItem { Text = "Park City East", Value ="Park City East"},
+                    new SelectListItem { Text = "Parowan", Value ="Parowan"},
+                    new SelectListItem { Text = "Payson", Value ="Payson"},
+                    new SelectListItem { Text = "Perry", Value ="Perry"},
+                    new SelectListItem { Text = "Piute", Value ="Piute"},
+                    new SelectListItem { Text = "Plain City", Value ="Plain City"},
+                    new SelectListItem { Text = "Pleasant Grove", Value ="Pleasant Grove"},
+                    new SelectListItem { Text = "Pleasant View", Value ="Pleasant View"},
+                    new SelectListItem { Text = "Plymouth", Value ="Plymouth"},
+                    new SelectListItem { Text = "Portage", Value ="Portage"},
+                    new SelectListItem { Text = "Price", Value ="Price"},
+                    new SelectListItem { Text = "Providence", Value ="Providence"},
+                    new SelectListItem { Text = "Provo", Value ="Provo"},
+                    new SelectListItem { Text = "Randolph", Value ="Randolph"},
+                    new SelectListItem { Text = "Redmond", Value ="Redmond"},
+                    new SelectListItem { Text = "Rich", Value ="Rich"},
+                    new SelectListItem { Text = "Richfield", Value ="Richfield"},
+                    new SelectListItem { Text = "Richmond", Value ="Richmond"},
+                    new SelectListItem { Text = "River Heights", Value ="River Heights"},
+                    new SelectListItem { Text = "Riverdale", Value ="Riverdale"},
+                    new SelectListItem { Text = "Riverton", Value ="Riverton"},
+                    new SelectListItem { Text = "Rockville", Value ="Rockville"},
+                    new SelectListItem { Text = "Rocky Ridge", Value ="Rocky Ridge"},
+                    new SelectListItem { Text = "Roosevelt", Value ="Roosevelt"},
+                    new SelectListItem { Text = "Roy", Value ="Roy"},
+                    new SelectListItem { Text = "Rush Valley", Value ="Rush Valley"},
+                    new SelectListItem { Text = "Salem", Value ="Salem"},
+                    new SelectListItem { Text = "Salina", Value ="Salina"},
+                    new SelectListItem { Text = "Salt Lake City", Value ="Salt Lake City"},
+                    new SelectListItem { Text = "Salt Lake", Value ="Salt Lake"},
+                    new SelectListItem { Text = "San Juan", Value ="San Juan"},
+                    new SelectListItem { Text = "Sandy", Value ="Sandy"},
+                    new SelectListItem { Text = "Sanpete", Value ="Sanpete"},
+                    new SelectListItem { Text = "Santa Clara", Value ="Santa Clara"},
+                    new SelectListItem { Text = "Santaquin", Value ="Santaquin"},
+                    new SelectListItem { Text = "Santaquin South", Value ="Santaquin South"},
+                    new SelectListItem { Text = "Saratoga Springs", Value ="Saratoga Springs"},
+                    new SelectListItem { Text = "Scipio", Value ="Scipio"},
+                    new SelectListItem { Text = "Scofield", Value ="Scofield"},
+                    new SelectListItem { Text = "Sevier", Value ="Sevier"},
+                    new SelectListItem { Text = "Sigurd", Value ="Sigurd"},
+                    new SelectListItem { Text = "Smithfield", Value ="Smithfield"},
+                    new SelectListItem { Text = "Snowville", Value ="Snowville"},
+                    new SelectListItem { Text = "Snyderville Basin Tr", Value ="Snyderville Basin Tr"},
+                    new SelectListItem { Text = "South Jordan", Value ="South Jordan"},
+                    new SelectListItem { Text = "South Ogden", Value ="South Ogden"},
+                    new SelectListItem { Text = "South Salt Lake", Value ="South Salt Lake"},
+                    new SelectListItem { Text = "South Weber", Value ="South Weber"},
+                    new SelectListItem { Text = "Spanish Fork", Value ="Spanish Fork"},
+                    new SelectListItem { Text = "Spring City", Value ="Spring City"},
+                    new SelectListItem { Text = "Springdale", Value ="Springdale"},
+                    new SelectListItem { Text = "Springville", Value ="Springville"},
+                    new SelectListItem { Text = "St. George", Value ="St. George"},
+                    new SelectListItem { Text = "Stansbury Park", Value ="Stansbury Park"},
+                    new SelectListItem { Text = "Sterling", Value ="Sterling"},
+                    new SelectListItem { Text = "Stockton", Value ="Stockton"},
+                    new SelectListItem { Text = "Summit", Value ="Summit"},
+                    new SelectListItem { Text = "Sunset", Value ="Sunset"},
+                    new SelectListItem { Text = "Syracuse", Value ="Syracuse"},
+                    new SelectListItem { Text = "Tabiona", Value ="Tabiona"},
+                    new SelectListItem { Text = "Taylorsville", Value ="Taylorsville"},
+                    new SelectListItem { Text = "Tooele City", Value ="Tooele City"},
+                    new SelectListItem { Text = "Tooele", Value ="Tooele"},
+                    new SelectListItem { Text = "Toquerville", Value ="Toquerville"},
+                    new SelectListItem { Text = "Torrey", Value ="Torrey"},
+                    new SelectListItem { Text = "Tremonton", Value ="Tremonton"},
+                    new SelectListItem { Text = "Trenton", Value ="Trenton"},
+                    new SelectListItem { Text = "Tropic", Value ="Tropic"},
+                    new SelectListItem { Text = "Uintah", Value ="Uintah"},
+                    new SelectListItem { Text = "Uintah", Value ="Uintah"},
+                    new SelectListItem { Text = "UT Data Ctr SL Co", Value ="UT Data Ctr SL Co"},
+                    new SelectListItem { Text = "UT Data Ctr UT Co", Value ="UT Data Ctr UT Co"},
+                    new SelectListItem { Text = "Utah", Value ="Utah"},
+                    new SelectListItem { Text = "Vernal", Value ="Vernal"},
+                    new SelectListItem { Text = "Vernon", Value ="Vernon"},
+                    new SelectListItem { Text = "Vineyard", Value ="Vineyard"},
+                    new SelectListItem { Text = "Virgin", Value ="Virgin"},
+                    new SelectListItem { Text = "Wales", Value ="Wales"},
+                    new SelectListItem { Text = "Wallsburg", Value ="Wallsburg"},
+                    new SelectListItem { Text = "Wasatch", Value ="Wasatch"},
+                    new SelectListItem { Text = "Washington City", Value ="Washington City"},
+                    new SelectListItem { Text = "Washington", Value ="Washington"},
+                    new SelectListItem { Text = "Washington Terrace", Value ="Washington Terrace"},
+                    new SelectListItem { Text = "Wayne", Value ="Wayne"},
+                    new SelectListItem { Text = "Weber", Value ="Weber"},
+                    new SelectListItem { Text = "Wellington", Value ="Wellington"},
+                    new SelectListItem { Text = "Wellsville", Value ="Wellsville"},
+                    new SelectListItem { Text = "Wendover", Value ="Wendover"},
+                    new SelectListItem { Text = "West Bountiful", Value ="West Bountiful"},
+                    new SelectListItem { Text = "West Haven", Value ="West Haven"},
+                    new SelectListItem { Text = "West Jordan", Value ="West Jordan"},
+                    new SelectListItem { Text = "West Point", Value ="West Point"},
+                    new SelectListItem { Text = "West Valley City", Value ="West Valley City"},
+                    new SelectListItem { Text = "White City Township", Value ="White City Township"},
+                    new SelectListItem { Text = "Willard", Value ="Willard"},
+                    new SelectListItem { Text = "Woodland Hills", Value ="Woodland Hills"},
+                    new SelectListItem { Text = "Woodruff", Value ="Woodruff"},
+                    new SelectListItem { Text = "Woods Cross", Value ="Woods Cross"}
+
+                }, "Select City")
 
             @Html.DropDownList("searchByCounty", new List<SelectListItem>
                 {
-                      new SelectListItem { Text = "Utah", Value = "Utah", Selected=true},
-                      new SelectListItem { Text = "Salt Lake", Value = "Salt Lake"},
-                      new SelectListItem { Text = "Box Elder", Value = "Box Elder"}
-                }, "Select Department")
+                    new SelectListItem { Text ="Beaver", Value ="Beaver", Selected = true},
+                    new SelectListItem { Text ="Box Elder", Value ="Box Elder"},
+                    new SelectListItem { Text ="Cache", Value ="Cache"},
+                    new SelectListItem { Text ="Carbon", Value ="Carbon"},
+                    new SelectListItem { Text ="Daggett", Value ="Daggett"},
+                    new SelectListItem { Text ="Davis", Value ="Davis"},
+                    new SelectListItem { Text ="Duchesne", Value ="Duchesne"},
+                    new SelectListItem { Text ="Emery", Value ="Emery"},
+                    new SelectListItem { Text ="Garfield", Value ="Garfield"},
+                    new SelectListItem { Text ="Grand", Value ="Grand"},
+                    new SelectListItem { Text ="Beaver", Value ="Beaver"},
+                    new SelectListItem { Text ="BoxElder", Value ="Box Elder"},
+                    new SelectListItem { Text ="Iron", Value ="Iron"},
+                    new SelectListItem { Text ="Juab", Value ="Juab"},
+                    new SelectListItem { Text ="Kane", Value ="Kane"},
+                    new SelectListItem { Text ="Millard", Value ="Millard"},
+                    new SelectListItem { Text ="Morgan", Value ="Morgan"},
+                    new SelectListItem { Text ="Piute", Value ="Piute"},
+                    new SelectListItem { Text ="Rich", Value ="Rich"},
+                    new SelectListItem { Text ="Salt Lake", Value ="Salt Lake"},
+                    new SelectListItem { Text ="San Juan", Value ="San Juan"},
+                    new SelectListItem { Text ="Sanpete", Value ="Sanpete"},
+                    new SelectListItem { Text ="Sevier", Value ="Sevier"},
+                    new SelectListItem { Text ="Summit", Value ="Summit"},
+                    new SelectListItem { Text ="Tooele", Value ="Tooele"},
+                    new SelectListItem { Text ="Uintah", Value ="Uintah"},
+                    new SelectListItem { Text ="Utah", Value ="Utah"},
+                    new SelectListItem { Text ="Wasatch", Value ="Wasatch"},
+                    new SelectListItem { Text ="Washington", Value ="Washington"},
+                    new SelectListItem { Text ="Wayne", Value ="Wayne"},
+                    new SelectListItem { Text ="Weber", Value ="Weber"}
+
+                }, "Select County")
+
+            @Html.DropDownList("searchBySeverity", new List<SelectListItem>
+                {
+                      new SelectListItem { Text = "1", Value = "1", Selected=true},
+                      new SelectListItem { Text = "2", Value = "2"},
+                      new SelectListItem { Text = "3", Value = "3"},
+                      new SelectListItem { Text = "4", Value = "4"},
+                      new SelectListItem { Text = "5", Value = "5"}
+                }, "Select Severity")
 
             <br /><input type="submit" value="Search" />
         }
@@ -106,24 +464,26 @@
 
                             @foreach (var a in Model.Accidents)
                             {
-                                <div class="table-row">
-                                    <div class="table-box">
-                                        <div fs-cmssort-field="name" class="table-data name">@a.crash_id</div>
-                                    </div>
-                                    <div class="table-data">Date Here</div>
-                                    <div class="table-data">@a.city</div>
-                                    <div fs-cmsfilter-type="date" fs-cmsfilter-field="date" class="table-data date">@a.county_name</div>
-                                    <div fs-cmsfilter-type="date" fs-cmsfilter-field="date" class="table-data date">@a.crash_severity_id</div>
-                                    <div class="div-block-421">
-                                        <a asp-action="Crash" asp-controller="Home" asp-route-id="@a.crash_id" class="button-secondary-icon-copy w-button"><span class="btn-icon">More Details</span></a>
-                                    </div>
-                                    @if (this.User.Identity.IsAuthenticated)
-                                    {
-                                        <form method="post">
-                                            <button type="submit" value="Edit" asp-controller="Account" asp-action="Edit" asp-route-id="@a.crash_id">Edit</button>
-                                        </form>
-                                    }
+                            <div class="table-row">
+                                <div class="table-box">
+                                    <div fs-cmssort-field="name" class="table-data name">@a.crash_id</div>
                                 </div>
+                                <div class="table-data">Date Here</div>
+                                <div class="table-data">@a.city</div>
+                                <div fs-cmsfilter-type="date" fs-cmsfilter-field="date" class="table-data date">@a.county_name</div>
+                                <div fs-cmsfilter-type="date" fs-cmsfilter-field="date" class="table-data date">@a.crash_severity_id</div>
+                                <div class="div-block-421">
+                                    <a asp-action="Crash" asp-controller="Home" asp-route-id="@a.crash_id" class="button-secondary-icon-copy w-button"><span class="btn-icon">More Details</span></a>
+                                </div>
+                                @if (this.User.Identity.IsAuthenticated)
+                                {
+                                    <a class="btn btn-primary" asp-controller="Home" asp-action="Edit" asp-route-crash_id="@a.crash_id">Edit</a>
+                                }
+                                @if (this.User.Identity.IsAuthenticated)
+                                {
+                                    <a class="btn btn-primary" asp-controller="Home" asp-action="Delete" asp-route-crash_id="@a.crash_id">Delete</a>
+                                }
+                            </div>
                             }
                         </div>
                     </div>
