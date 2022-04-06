@@ -55,9 +55,9 @@ namespace CrashUtahProject
             services.AddRazorPages();
             services.AddServerSideBlazor();
 
-            services.AddSingleton<InferenceSession>(
-              new InferenceSession("INTEX_model.onnx")
-            );
+            //services.AddSingleton<InferenceSession>(
+            //  new InferenceSession("INTEX_model.onnx")
+            //);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

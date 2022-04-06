@@ -55,6 +55,12 @@ namespace CrashUtahProject.Controllers
 
             return Redirect(returnUrl);
         }
+
+        [HttpPost]
+        public IActionResult Edit(int id)
+        {
+            return Redirect("/Admin/Edit/{id}");
+        }
     }
 }
 
