@@ -30,11 +30,11 @@ namespace CrashUtahProject.Controllers
             return View();
         }
 
-        public IActionResult Data(string searchByID, string searchByCity, int pageNum = 1)
+        public IActionResult Data(string searchByCity, string searchByCounty, int pageNum = 1)
         {
             int pageSize = 25;
 
-            if (searchByID == null && searchByCity == null)
+            if (searchByCity == null && searchByCounty == null)
             {
                 var x = new AccidentsViewModel
                 {
@@ -55,12 +55,10 @@ namespace CrashUtahProject.Controllers
             }
             else
             {
-                searchByID = searchByID ?? "%";
-
                 var x = new AccidentsViewModel
                 {
                     Accidents = repo.Accidents
-                    .Where(x => x.crash_id.ToString().Contains(searchByID) && x.city.Contains(searchByCity))
+                    .Where(x => x.city.ToString().Contains(searchByCity) && x.county_name.Contains(searchByCounty))
                     .OrderBy(x => x.crash_id)
                     .Skip((pageNum - 1) * pageSize)
                     .Take(pageSize),
