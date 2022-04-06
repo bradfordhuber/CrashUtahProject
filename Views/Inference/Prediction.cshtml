@@ -1,0 +1,223 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model CrashData
+<!-- this file allows users to add a bowler to the database
+
+        public float overturn_rollover_True { get; set; }
+        public float commercial_motor_veh_involved_True { get; set; }
+        public float teenage_driver_involved_True { get; set; }
+        public float older_driver_involved_True { get; set; }
+        public float single_vehicle_True { get; set; }
+        public float distracted_driving_True { get; set; }
+        public float drowsy_driving_True { get; set; }
+        public float day_Monday { get; set; }
+        public float day_Saturday { get; set; }
+        public float day_Sunday { get; set; }
+        public float day_Tuesday { get; set; }
+        public float roadway_departure_True { get; set; }
+        public float route_68 { get; set; }
+        public float county_name_WASATCH { get; set; }
+        public float time_frame_5am_9am { get; set; }
+        public float time_frame_9am_12pm { get; set; }-->
+<div>
+    <h1>Please include all neccessary information</h1>
+</div>
+<div>
+    <form method="post">
+        @*<input type="hidden" asp-for="BowlerID" value="max + 1" />*@
+        <label asp-for="work_zone_related_True">Work Zone Related:</label>
+        <select asp-for="work_zone_related_True">
+            <option value="0.0">No</option>
+            <option value="1.0">Yes</option>
+        </select>
+        <br />
+
+        <label asp-for="pedestrian_involved_True">Pedestrian Involved:</label>
+        <select asp-for="pedestrian_involved_True">
+            <option value="0.0">No</option>
+            <option value="1.0">Yes</option>
+        </select>
+        <br />
+
+        <label asp-for="bicyclist_involved_True">Bicylist Involved:</label>
+        <select asp-for="bicyclist_involved_True">
+            <option value="0.0">No</option>
+            <option value="1.0">Yes</option>
+        </select>
+        <br />
+
+        <label asp-for="motorcycle_involved_True">Motorcyle Involved:</label>
+        <select asp-for="motorcycle_involved_True">
+            <option value="0.0">No</option>
+            <option value="1.0">Yes</option>
+        </select>
+        <br />
+
+
+        <label asp-for="improper_restraint_True">Not properly wearing Seatbelt:</label>
+        <select asp-for="improper_restraint_True">
+            <option value="0.0">Properly Buckled</option>
+            <option value="1.0">Improperly Buckled</option>
+        </select>
+        <br />
+
+
+        <label asp-for="unrestrained_True">Wearing Seatbelt:</label>
+        <select asp-for="unrestrained_True">
+            <option value="0.0">Yes</option>
+            <option value="1.0">No</option>
+        </select>
+        <br />
+
+        <label asp-for="dui_True">Substances involved:</label>
+        <select asp-for="dui_True">
+            <option value="0.0">No</option>
+            <option value="1.0">Yes</option>
+        </select>
+        <br />
+
+
+        <label asp-for="intersection_related_True">Crash at intersection:</label>
+        <select asp-for="intersection_related_True">
+            <option value="0.0">No</option>
+            <option value="1.0">Yes</option>
+        </select>
+        <br />
+
+
+        <label asp-for="wild_animal_related_True">Wild Animal:</label>
+        <select asp-for="wild_animal_related_True">
+            <option value="0.0">No</option>
+            <option value="1.0">Yes</option>
+        </select>
+        <br />
+
+        <label asp-for="overturn_rollover_True">Overturn rollover:</label>
+        <select asp-for="overturn_rollover_True">
+            <option value="0.0">No</option>
+            <option value="1.0">Yes</option>
+        </select>
+        <br />
+
+        <label asp-for="commercial_motor_veh_involved_True">commercial vehicle involved:</label>
+        <select asp-for="commercial_motor_veh_involved_True">
+            <option value="0.0">No</option>
+            <option value="1.0">Yes</option>
+        </select>
+        <br />
+
+        <label asp-for="teenage_driver_involved_True">Teenage Driver:</label>
+        <select asp-for="teenage_driver_involved_True">
+            <option value="0.0">No</option>
+            <option value="1.0">Yes</option>
+        </select>
+        <br />
+
+
+        <label asp-for="older_driver_involved_True">Older Driver:</label>
+        <select asp-for="older_driver_involved_True">
+            <option value="0.0">No</option>
+            <option value="1.0">Yes</option>
+        </select>
+        <br />
+
+
+        <label asp-for="single_vehicle_True">Single Vehicle:</label>
+        <select asp-for="single_vehicle_True">
+            <option value="0.0">No</option>
+            <option value="1.0">Yes</option>
+        </select>
+        <br />
+
+        <label asp-for="older_driver_involved_True">Older Driver:</label>
+        <select asp-for="older_driver_involved_True">
+            <option value="0.0">No</option>
+            <option value="1.0">Yes</option>
+        </select>
+        <br />
+
+
+        <label asp-for="distracted_driving_True">Distracted Driving:</label>
+        <select asp-for="distracted_driving_True">
+            <option value="0.0">No</option>
+            <option value="1.0">Yes</option>
+        </select>
+        <br />
+
+        <label asp-for="drowsy_driving_True">Drowsy Driving:</label>
+        <select asp-for="drowsy_driving_True">
+            <option value="0.0">No</option>
+            <option value="1.0">Yes</option>
+        </select>
+        <br />
+
+        <label asp-for="day_Monday">Monday:</label>
+        <select asp-for="day_Monday">
+            <option value="0.0">No</option>
+            <option value="1.0">Yes</option>
+        </select>
+        <br />
+
+        <label asp-for="day_Saturday">Saturday:</label>
+        <select asp-for="day_Saturday">
+            <option value="0.0">No</option>
+            <option value="1.0">Yes</option>
+        </select>
+        <br />
+
+        <label asp-for="day_Sunday">Sunday:</label>
+        <select asp-for="day_Sunday">
+            <option value="0.0">No</option>
+            <option value="1.0">Yes</option>
+        </select>
+        <br />
+
+        <label asp-for="day_Tuesday">Tuesday:</label>
+        <select asp-for="day_Tuesday">
+            <option value="0.0">No</option>
+            <option value="1.0">Yes</option>
+        </select>
+        <br />
+
+        <label asp-for="roadway_departure_True">Roadway Departure:</label>
+        <select asp-for="roadway_departure_True">
+            <option value="0.0">No</option>
+            <option value="1.0">Yes</option>
+        </select>
+        <br />
+
+        <label asp-for="route_68">route_68:</label>
+        <select asp-for="route_68">
+            <option value="0.0">No</option>
+            <option value="1.0">Yes</option>
+        </select>
+        <br />
+
+        <label asp-for="county_name_WASATCH">county WASATCH:</label>
+        <select asp-for="county_name_WASATCH">
+            <option value="0.0">No</option>
+            <option value="1.0">Yes</option>
+        </select>
+        <br />
+
+        <label asp-for="time_frame_5am_9am">Time 5 to 9:</label>
+        <select asp-for="time_frame_5am_9am">
+            <option value="0.0">No</option>
+            <option value="1.0">Yes</option>
+        </select>
+        <br />
+
+        <label asp-for="time_frame_9am_12pm">Time 9 to 12:</label>
+        <select asp-for="time_frame_9am_12pm">
+            <option value="0.0">No</option>
+            <option value="1.0">Yes</option>
+        </select>
+        <br />
+
+        <button type="submit">Predict Crash Severity</button>
+    </form>
+</div>
