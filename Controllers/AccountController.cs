@@ -41,7 +41,7 @@ namespace CrashUtahProject.Controllers
 
                     if ((await signInManager.PasswordSignInAsync(user, loginModel.Password, false, false)).Succeeded)
                     {
-                        return View("Data");
+                        return Redirect(loginModel.ReturnUrl ?? "/Admin");
                     }
                 }
             }
