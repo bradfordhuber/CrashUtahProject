@@ -60,7 +60,7 @@
         </div>
         <div class="nav-footer-extra">
             <div class="nav-item separator"></div>
-            <a asp-controller="Home" class="nav-item bottom-item-inner dark-text w-inline-block">
+            @*<a asp-controller="Home" class="nav-item bottom-item-inner dark-text w-inline-block">*@
                 @*<div data-w-id="f8490152-5ae2-0a4c-a947-8d25251672e6" class="nav-item-icon user-bg">
             <div class="user-icon"><strong class="bold-text">M</strong></div>
         </div>*@
@@ -69,7 +69,10 @@
 
                 @if (this.User.Identity.IsAuthenticated)
                 {
-                <div ms-data="first-name" data-w-id="f8490152-5ae2-0a4c-a947-8d25251672ea" class="nav-label"><a asp-controller="Account">Log Out</a></div>
+        <div ms-data="first-name" data-w-id="f8490152-5ae2-0a4c-a947-8d25251672ea" class="nav-label">
+            @*<a asp-controller="Account">Log Out</a>*@
+            <a class="btn btn-sm btn-primary" href="/account/logout">Log Out</a>
+        </div>
                 }
                 else
                 {
@@ -79,7 +82,7 @@
                 @*<div class="menu-dots">
             <div data-w-id="f8490152-5ae2-0a4c-a947-8d25251672ed" class="icon nav-foot-icon"></div>
         </div>*@
-            </a>
+            @*</a>*@
         </div>
     </div>
     <div data-w-id="f8490152-5ae2-0a4c-a947-8d25251672ef" class="nav-back"></div>
